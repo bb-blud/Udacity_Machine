@@ -1,0 +1,20 @@
+No-Min_split:
+
+median_absolute_error: max_depth = 5 sometimes 6, looks from graph: 5
+
+mean_absolute_error: max_depth = 4 somtimes 5, looks from graph: 5
+
+mean_squared_error: max_depth = 9 sometimes 10 sometimes 4, looks from graph: 5
+
+For 50 runs:
+
+           | median_ae | mean_ae | mean_se|
+mean depth       5.7        5.24       5.6
+std depth        0.7       1.176      1.79  
+
+
+For 200 runs:
+
+           | median_ae | mean_ae | mean_se|
+mean depth       5.7        5.24       5.6
+std depth        0.7       1.176      1.79  
