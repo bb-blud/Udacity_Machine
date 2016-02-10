@@ -10,8 +10,11 @@ from sklearn.tree import DecisionTreeRegressor
 ### ADD EXTRA LIBRARIES HERE ###
 ################################
 from sklearn import cross_validation
+from sklearn.grid_search import GridSearchCV
+
+from sklearn.metrics import make_scorer
 from sklearn.metrics import median_absolute_error as metric
-#min_sp = 30 ##aquired after testing with GridSearch
+import sklearn.metrics as m
 
 def load_data():
     """Load the Boston dataset."""
@@ -43,7 +46,7 @@ def explore_city_data(city_data):
     # Calculate mean price?
     print "Mean price: ", np.mean(housing_prices)
     # Calculate median price?
-    print "Meadian price: ", np.median(housing_prices)
+    print "Median price: ", np.median(housing_prices)
     # Calculate standard deviation?
     print "Standard deviation: ", np.std(housing_prices)
 
@@ -57,6 +60,10 @@ def split_data(city_data):
     ###################################
     ### Step 2. YOUR CODE GOES HERE ###
     ###################################
+    #The cross validation train_test split is the first step in constructing all the model diagnostics we perform in the code
+    #below. Without test data, we would not be able to gauge whether the model is tending to overfit the data or is being biased,
+    #A model can be made to fit a certain data set exactly, but this does not guarantee it will generalize well to yet unseen data. 
+    #We can spot patterns that indicate overfitting in training vs test error plots for our model.  
     X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size = 0.3, random_state = 0)
 
     return X_train, y_train, X_test, y_test
@@ -68,7 +75,12 @@ def performance_metric(label, prediction):
     ###################################
     ### Step 3. YOUR CODE GOES HERE ###
     ###################################
-    return metric(label, prediction)
+    #I don't know how legitimate this justfication is but I settled on median_absolute_error as a metric because it was providing
+    #smoother error curves than mse and mean_ae. This can be partially expected because of med_ae's resistence to outliers. 
+    #The choice for the optimal max_depth parameter was more aparent in the error curves because of their less erratic behaviour. Further 
+    #the med_ae choice agrees with some computations I did using grid search further down. 
+#    return m.median_absolute_error(label, prediction)
+    return metric(label,prediction)
     # # The following page has a table of scoring functions in sklearn:
     # # http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics
     # pass
@@ -88,7 +100,7 @@ def learning_curve(depth, X_train, y_train, X_test, y_test):
     for i, s in enumerate(sizes):
 
         # Create and fit the decision tree regressor model
-        regressor = DecisionTreeRegressor(max_depth=depth)#, min_samples_split=min_sp)
+        regressor = DecisionTreeRegressor(max_depth=depth)
         regressor.fit(X_train[:s], y_train[:s])
 
         # Find the performance on the training and testing set
@@ -125,7 +137,7 @@ def model_complexity(X_train, y_train, X_test, y_test):
 
     for i, d in enumerate(max_depth):
         # Setup a Decision Tree Regressor so that it learns a tree with depth d
-        regressor = DecisionTreeRegressor(max_depth=d)#, min_samples_split=min_sp)
+        regressor = DecisionTreeRegressor(max_depth=d)
 
         # Fit the learner to the training data
         regressor.fit(X_train, y_train)
@@ -171,34 +183,54 @@ def fit_predict_model(city_data):
     # 1. Find an appropriate performance metric. This should be the same as the
     # one used in your performance_metric procedure above:
     # http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html
-    from sklearn.metrics import make_scorer
-    scorer = make_scorer(metric, greater_is_better=False)
+    metrics = {'median_ae' : m.median_absolute_error,  'mean_ae': m.mean_absolute_error,  'mse': m.mean_squared_error}
 
     # 2. We will use grid search to fine tune the Decision Tree Regressor and
     # obtain the parameters that generate the best training performance. Set up
     # the grid search object here.
     # http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV
-    from sklearn import grid_search
-    reg = grid_search.GridSearchCV(regressor, parameters, scoring=scorer)
 
-    # found_param = []
-    # for k in range(200):
-    #     reg.fit(X,y)
-    #     found_param.append(reg.best_params_['max_depth'])
-    # print np.mean(found_param), np.std(found_param)
+    # for key in metrics:
+    #     found_param = []
+    #     for i in range(200):
+    #         scorer = make_scorer(metrics[key], greater_is_better=False)
+    #         reg = GridSearchCV(regressor, parameters, scoring=scorer)
+    #         reg.fit(X,y)
+    #         found_param.append(reg.best_params_['max_depth'])
+    #     print key +"'s max_depth choice on average: ", np.mean(found_param), " with std: ", np.std(found_param)
 
+    # The commented loop above resulted in these data:
+    #
+    # median_ae's max_depth choice on average:  5.685  with std:  0.696975609329
+    # mean_ae's max_depth choice on average:  5.105  with std:  1.172166797
+    # mse's max_depth choice on average:  5.425  with std:  1.73042624807
+    
+    # Which supports the observation that the error curves for mse and mean_ae were more erratic. Worse, running GridSearch with mse
+    # would sometimes suggest an optimal max_depth as high as 8 or 9. Using median_ae, GridSearch would find a best max_depth between
+    # 5 and 6 more consistently. Which is what we want, since it agrees with the behavior of the Model_complexity_graph. Here, a clear divergence 
+    # between the test and training error curves can be seen between max_depths of 5 and 6. At that point the training error curve continues 
+    # its descent towards zero (as it overfits) while the test error curve levels off horizontally. So that after 5-6 max_depth the model would
+    # approach perfectly fitting the training data, while not predicting unseen data with any better accuracy. I guess some of this would only
+    # matter if we were trying automated the selection of max_depth. Similar behavior can be gleaned from the learning curve graphs. Basically
+    # for all these curves, training error starts at zero and test error starts at a max. This is explained because few datapoints can always
+    # be fit by a model, while the chances of that same model predicting an unseen example are low (heavily biased). As the ammount of data is 
+    # incremented the curves approach each other since it is harder to fit all examples perfectly (training set), but bias is being 
+    # reduced (test set). For low values of max_depth this convergence levels off at a high error. This indicates that the model is biased overall.
+    # Neither the training set nor the test set are being fit particularly well. As max_depth increases the horizontal where the two curves 
+    # are converging, moves towards the x-axis. This is happening because the more complex model is capable of fitting the training set better AND 
+    # generalizing to the test set better. After a max_depth of 5-6 however, only the training error horizontal continues this trend as it starts 
+    # to overfit the data while no better prediction is ocurring with the test data. 
+
+    scorer = make_scorer(metrics['median_ae'], greater_is_better=False)
+    reg = GridSearchCV(regressor, parameters, scoring=scorer)
+
+    print reg.fit(X,y).best_params_['max_depth']
+
+    ### FINAL MODEL CHOICE: max_depth of 5 ###
+    reg = DecisionTreeRegressor(max_depth = 5)
     # Fit the learner to the training data to obtain the best parameter set
     print "Final Model: "
     print reg.fit(X, y)    
-    print
-    print
-    for s in reg.grid_scores_:
-        print s
-    print
-    print reg.best_estimator_
-    print reg.best_score_, reg.best_params_
-    print reg.scorer_
-    print "\n"
 
     # Use the model to predict the output of a particular sample
     x = [11.95, 0.00, 18.100, 0, 0.6590, 5.6090, 90.00, 1.385, 24, 680.0, 20.20, 332.09, 12.13]
@@ -216,7 +248,7 @@ def main():
     city_data = load_data()
 
     # Explore the data
-#    explore_city_data(city_data)
+    explore_city_data(city_data)
 
     # Training/Test dataset split
     X_train, y_train, X_test, y_test = split_data(city_data)
@@ -229,7 +261,7 @@ def main():
     # Model Complexity Graph
     model_complexity(X_train, y_train, X_test, y_test)
 
-    # Tune and predict Model
+    #Tune and predict Model
     fit_predict_model(city_data)
 
 
