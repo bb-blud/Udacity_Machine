@@ -13,7 +13,7 @@ from sklearn import cross_validation
 from sklearn.grid_search import GridSearchCV
 
 from sklearn.metrics import make_scorer
-from sklearn.metrics import median_absolute_error as metric
+#from sklearn.metrics import median_absolute_error as metric
 import sklearn.metrics as m
 
 def load_data():
@@ -63,7 +63,7 @@ def split_data(city_data):
     #The cross validation train_test split is the first step in constructing all the model diagnostics we perform in the code
     #below. Without test data, we would not be able to gauge whether the model is tending to overfit the data or is being biased,
     #A model can be made to fit a certain data set exactly, but this does not guarantee it will generalize well to yet unseen data. 
-    #We can spot patterns that indicate overfitting in training vs test error plots for our model.  
+    #We can spot patterns that indicate over fitting in training vs test error plots for our model.  
     X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size = 0.3, random_state = 0)
 
     return X_train, y_train, X_test, y_test
@@ -75,12 +75,12 @@ def performance_metric(label, prediction):
     ###################################
     ### Step 3. YOUR CODE GOES HERE ###
     ###################################
-    #I don't know how legitimate this justfication is but I settled on median_absolute_error as a metric because it was providing
-    #smoother error curves than mse and mean_ae. This can be partially expected because of med_ae's resistence to outliers. 
-    #The choice for the optimal max_depth parameter was more aparent in the error curves because of their less erratic behaviour. Further 
+    #I don't know how legitimate this justification is but I settled on median_absolute_error as a metric because it was providing
+    #smoother error curves than mse and mean_ae. This can be partially expected because of med_ae's resistance to outliers. 
+    #The choice for the optimal max_depth parameter was more apparent in the error curves because of their less erratic behavior. Further 
     #the med_ae choice agrees with some computations I did using grid search further down. 
-#    return m.median_absolute_error(label, prediction)
-    return metric(label,prediction)
+    return m.median_absolute_error(label, prediction)
+#    return metric(label,prediction)
     # # The following page has a table of scoring functions in sklearn:
     # # http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics
     # pass
@@ -209,17 +209,17 @@ def fit_predict_model(city_data):
     # would sometimes suggest an optimal max_depth as high as 8 or 9. Using median_ae, GridSearch would find a best max_depth between
     # 5 and 6 more consistently. Which is what we want, since it agrees with the behavior of the Model_complexity_graph. Here, a clear divergence 
     # between the test and training error curves can be seen between max_depths of 5 and 6. At that point the training error curve continues 
-    # its descent towards zero (as it overfits) while the test error curve levels off horizontally. So that after 5-6 max_depth the model would
+    # its descent towards zero (as it over fits) while the test error curve levels off horizontally. So that after 5-6 max_depth the model would
     # approach perfectly fitting the training data, while not predicting unseen data with any better accuracy. I guess some of this would only
     # matter if we were trying automated the selection of max_depth. Similar behavior can be gleaned from the learning curve graphs. Basically
-    # for all these curves, training error starts at zero and test error starts at a max. This is explained because few datapoints can always
-    # be fit by a model, while the chances of that same model predicting an unseen example are low (heavily biased). As the ammount of data is 
+    # for all these curves, training error starts at zero and test error starts at a max. This is explained because few data points can always
+    # be fit by a model, while the chances of that same model predicting an unseen example are low (heavily biased). As the amount of data is 
     # incremented the curves approach each other since it is harder to fit all examples perfectly (training set), but bias is being 
     # reduced (test set). For low values of max_depth this convergence levels off at a high error. This indicates that the model is biased overall.
     # Neither the training set nor the test set are being fit particularly well. As max_depth increases the horizontal where the two curves 
     # are converging, moves towards the x-axis. This is happening because the more complex model is capable of fitting the training set better AND 
     # generalizing to the test set better. After a max_depth of 5-6 however, only the training error horizontal continues this trend as it starts 
-    # to overfit the data while no better prediction is ocurring with the test data. 
+    # to over fit the data while no better prediction is occurring with the test data. 
 
     scorer = make_scorer(metrics['median_ae'], greater_is_better=False)
     reg = GridSearchCV(regressor, parameters, scoring=scorer)
