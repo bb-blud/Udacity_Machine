@@ -223,14 +223,15 @@ def fit_predict_model(city_data):
     # mean_ae's max_depth choice on average:  5.105  with std:  1.172166797
     # mse's max_depth choice on average:  5.425  with std:  1.73042624807
     
+    
     # These support the observation that the error curves for mse and mean_ae were more erratic. Worse, running GridSearch with
     # mse would sometimes suggest an optimal max_depth as high as 8 or 9. Using median_ae, GridSearch would find a best max_depth
-    # between 5 and 6 more consistently. Which is what we want, since it agrees with the behavior of the
-    # Model_complexity_graph. Here, a clear divergence between the test and training error curves can be seen between max_depths
-    # of 5 and 6. At that point the training error curve continues its descent towards zero (as it over fits) while the test error
-    # curve levels off horizontally. So that after 5-6 max_depth the model would approach perfectly fitting the training data,
-    # while not predicting unseen data with any better accuracy. I guess some of this would only matter if we were trying to
-    # automate the selection of max_depth. Similar behavior can be gleaned from the learning curve graphs. Basically for all
+    # between 5 and 6 more consistently. I guess some of this would only matter if we were trying to automate the selection of
+    # max_depth. max_depth between 5-6 is what we want, since it agrees with the behavior of the Model_complexity_graph. Here, a
+    # clear divergence between the test and training error curves can be seen between max_depths of 5 and 6. At that point the
+    # training error curve continues its descent towards zero (as it over fits) while the test error curve levels off
+    # horizontally. So that after 5-6 max_depth the model would approach perfectly fitting the training data, while not predicting
+    # unseen data with any better accuracy. . Similar behavior can be gleaned from the learning curve graphs.  Basically for all
     # these curves, training error starts at zero and test error starts at a max. This is explained because few data points can
     # always be fit by a model, while the chances of that same model predicting an unseen example are low (heavily biased). As the
     # amount of data is incremented the curves approach each other since it is harder to fit all examples perfectly (training
