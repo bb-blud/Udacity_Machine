@@ -176,7 +176,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Project 2: Supervised Learning</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Project 2: Supervised Learning</span>
 <span class="c1">### Building a Student Intervention System</span>
 </pre></div>
 
@@ -202,9 +202,9 @@ indicates a classification problem with two classes, pass and fail.</p>
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Import libraries</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 
 </div>
@@ -217,9 +217,9 @@ indicates a classification problem with two classes, pass and fail.</p>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Read student data</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Read student data</span>
 <span class="n">student_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;student-data.csv&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;Student data read successfully!&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;Student data read successfully!&quot;</span>
 <span class="c1"># Note: The last column &#39;passed&#39; is the target/label, all other are feature columns</span>
 </pre></div>
 
@@ -265,7 +265,7 @@ indicates a classification problem with two classes, pass and fail.</p>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># TODO: Compute desired values - replace each &#39;?&#39; with an appropriate expression/function call</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Compute desired values - replace each &#39;?&#39; with an appropriate expression/function call</span>
 
 <span class="n">n_students</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">n_features</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
@@ -273,11 +273,11 @@ indicates a classification problem with two classes, pass and fail.</p>
 <span class="n">n_failed</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">student_data</span><span class="p">[</span><span class="s1">&#39;passed&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">])</span>
 <span class="n">grad_rate</span> <span class="o">=</span> <span class="mf">100.</span><span class="o">*</span><span class="n">n_passed</span><span class="o">/</span><span class="p">(</span><span class="n">n_passed</span> <span class="o">+</span> <span class="n">n_failed</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="s2">&quot;Total number of students: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_students</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;Number of students who passed: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_passed</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;Number of students who failed: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_failed</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;Number of features: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;Graduation rate of the class: {:.2f}%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grad_rate</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Total number of students: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_students</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Number of students who passed: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_passed</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Number of students who failed: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_failed</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Number of features: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Graduation rate of the class: {:.2f}%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grad_rate</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -321,16 +321,16 @@ Graduation rate of the class: 67.09%
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Extract feature (X) and target (y) columns</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature (X) and target (y) columns</span>
 <span class="n">feature_cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># all columns but last are features</span>
 <span class="n">target_col</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># last column is the target/label</span>
-<span class="nb">print</span> <span class="s2">&quot;Feature column(s):-</span><span class="se">\n</span><span class="s2">{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;Target column: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target_col</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Feature column(s):-</span><span class="se">\n</span><span class="s2">{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Target column: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target_col</span><span class="p">)</span>
 
 <span class="n">X_all</span> <span class="o">=</span> <span class="n">student_data</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span>  <span class="c1"># feature values for all students</span>
 <span class="n">y_all</span> <span class="o">=</span> <span class="n">student_data</span><span class="p">[</span><span class="n">target_col</span><span class="p">]</span>  <span class="c1"># corresponding targets/labels</span>
-<span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Feature values:-&quot;</span>
-<span class="nb">print</span> <span class="n">X_all</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># print the first 5 rows</span>
+<span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Feature values:-&quot;</span>
+<span class="k">print</span> <span class="n">X_all</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># print the first 5 rows</span>
 </pre></div>
 
 </div>
@@ -395,7 +395,7 @@ Feature values:-
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Preprocess feature columns</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Preprocess feature columns</span>
 <span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="n">outX</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># output dataframe, initially empty</span>
 
@@ -415,7 +415,7 @@ Feature values:-
     <span class="k">return</span> <span class="n">outX</span>
 
 <span class="n">X_all</span> <span class="o">=</span> <span class="n">preprocess_features</span><span class="p">(</span><span class="n">X_all</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;Processed feature columns ({}):-</span><span class="se">\n</span><span class="s2">{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_all</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_all</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+<span class="k">print</span> <span class="s2">&quot;Processed feature columns ({}):-</span><span class="se">\n</span><span class="s2">{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_all</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_all</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -453,20 +453,20 @@ Feature values:-
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># First, decide how many training vs test samples you want</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># First, decide how many training vs test samples you want</span>
 <span class="n">num_all</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># same as len(student_data)</span>
 <span class="n">num_train</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># about 75% of the data</span>
 <span class="n">num_test</span> <span class="o">=</span> <span class="n">num_all</span> <span class="o">-</span> <span class="n">num_train</span>
 
 <span class="c1"># TODO: Then, select features (X) and corresponding labels (y) for the training and test sets</span>
 <span class="c1"># Note: Shuffle the data or randomly select samples to avoid any bias due to ordering in the dataset</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="o">.</span><span class="mi">24</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="s2">&quot;Training set: {} samples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span> <span class="s2">&quot;Test set: {} samples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span> <span class="s2">&quot;Training set: {} samples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span> <span class="s2">&quot;Test set: {} samples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="c1"># Note: If you need a validation set, extract it from within training data</span>
 </pre></div>
 
@@ -513,8 +513,8 @@ Test set: 95 samples
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<p><strong>Model Training</strong></p>
-<p>Kfold cross validation can be used to get the maximum use of a small data set like the one here. To get my bearings and not to impose any pre-judgement, I wanted to try most of the classifiers seen in class out of the box. I excluded neural net, since its recommended use requires the features to be scaled (one of the disadvantages of that algorithm).  After separating the data into a training set (size 300) and test set (size 95), I used Kfold cross-validation on the training set with 10 folds to have a basic handle on how the models were performing on average. The result of this can be seen in the table below. The decision tree trails all others in its f1 test score, while scoring perfectly on the training set (which no other does) so it seems to be over-fitting.  The SVC tops all others with an average test f1 of 0.808. KNN doesn't trail far with 0.781. Naive Bayes and AdaBoost are pretty much tied with test f1's of 0.768 and 0.767 respectively.</p>
+<p><strong>Model consideration</strong></p>
+<p>Before we manipulated it, the data was strongly categorical. Even age, though ordered, basically could be thought of as buckets between 15 and 22. So initially I thought that maybe the DecisionTree would be the most apt to deal with this problem. Even though we saw in the lectures that decision trees handle continuous data as well, the motivation for the algorithm presented in class, made me think that it would handle this "categorical" data well (even though we made it numeric). In class we had a boolean function with several weather related categories as input, and an output of play/no play tenis. Here we have data that is closely categorical, with a pass/no pass output. To get my bearings and not to impose any pre-judgement, I wanted to try most of the classifiers seen in class out of the box. I excluded neural net, since its recommended use requires the features to be scaled (one of the disadvantages of that algorithm). The result of this can be seen in the table below.</p>
 
 </div>
 </div>
@@ -524,10 +524,10 @@ Test set: 95 samples
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Helper Functions</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Helper Functions</span>
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span> 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">f1_score</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span> 
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
 
 <span class="c1"># Return the classifier&#39;s training time</span>
 <span class="k">def</span> <span class="nf">timeTraining</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -558,12 +558,12 @@ Test set: 95 samples
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># To get my bearings I wanted to try most of the classifiers seen in class out of the box. </span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVC</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="k">import</span> <span class="n">GaussianNB</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">AdaBoostClassifier</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># To get my bearings I wanted to try most of the classifiers seen in class out of the box. </span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
 </pre></div>
 
 </div>
@@ -576,8 +576,8 @@ Test set: 95 samples
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1">#Adding Kfold validation to try out the Pro Tip from CodeReview2</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">KFold</span>  
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#Adding Kfold validation to try out the Pro Tip from CodeReview2</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">KFold</span>  
 
 <span class="c1"># Setting up KFold cross_validation object</span>
 <span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
@@ -619,7 +619,7 @@ Test set: 95 samples
     <span class="n">table</span><span class="p">[</span><span class="n">classifier</span><span class="p">][</span><span class="s1">&#39;Prediction time&#39;</span><span class="p">]</span>       <span class="o">=</span> <span class="s2">&quot;{:10.4f} s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t_test</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">table</span><span class="p">[</span><span class="n">classifier</span><span class="p">][</span><span class="s1">&#39;F1 score test set&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">F1_test</span><span class="o">/</span><span class="mi">10</span>
     
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>  
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>  
 <span class="n">display</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
 </pre></div>
 
@@ -695,108 +695,11 @@ Test set: 95 samples
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>DecisionTree:</strong> Generates a tree representation of a decision function, where each node in the tree represents an if-then-else decision rule, and each leaf finally places the input in a given category (pass/fail in our case).</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>Simple to understand and interpret. The decision function can explicitly be drawn out as a tree structure.</p>
-</li>
-<li><p>The cost of predicting is logarithmic on the size of the training data.</p>
-</li>
-<li><p>It can handle categorical and numerical data equally well.</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li><p>They are prone to overffiting the data (as can be seen in the table) unless pruned, and/or tuned through its various paramters (i.e. minimum samples per leaf, maximum depth). This can be costly.</p>
-</li>
-<li><p>They can be unstable; small variations in the data can generate completely different trees.</p>
-</li>
-<li><p>They can create bias trees if some classes dominate.</p>
-</li>
-</ul>
-<p><strong>Chosen/rejected:</strong> Chosen</p>
-<p><strong>Reasoning:</strong> Before we manipulated it, the data was strongly categorical. Even age, though ordered, basically could be thought of as buckets between 15 and 22.  Even though the decision tree can handle both categorical and numerical data equally well, overall the structure of this data seems like a good fit for the tree like decision function. We can easily see how if then rules can be deduced from the attributes, things like, if (has internet connection) then … , or if (father's job == Teacher) then … else if (father's job == Healthcare worker) then … , so on and so forth. The data is also not too badly out of balance (approx 2:1 pass to no pass ratio) which mitigates one of the cons. Tunning the tree to improve its performance may prove costly and there is already some evidence of overfitting above. Using the model for prediction is fast, which would be advantageous in a situation of limited computational resources.</p>
-<hr>
-<p><strong>SVC:</strong> Seeks to maximize the decision boundary between classes by solving a quadratic programming problem.</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>Effective for data with a high number of attributes</p>
-</li>
-<li><p>Still effective when there are more attributes than data points</p>
-</li>
-<li><p>Its memory efficient because only a subset of the data is required (support vectors)</p>
-</li>
-<li><p>Highly tunable at the tuning phase (also a con). In sklearn's implementation we have 4 kernel function (plus the ability to define a custom kernel) plus around a dozen parameters.</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li><p>Harder to conceptualize relative to other models. The entire mechanism of the algorithm is a rather abstract linear algebra/analysis problem. (Though this con only really applies when seeking to interpret results in an intuitive way)</p>
-</li>
-<li><p>Though both its training time and predcition time were relatively fast out of the box, the model can be costly to tune do to its sheer number of configurations (can also be a pro).</p>
-</li>
-<li><p>Can only expensively provide probability estimates. (Not so relevant here)</p>
-</li>
-</ul>
-<p><strong>Chosen/Rejected:</strong> Chosen</p>
-<p><strong>Reasoning:</strong> For this particular problem since we are not required to estimate any probabilties there seems to be little downside to using SVC. On the other hand, some of its strengths are also not particulary relevant since, the number of attributes is pretty small compared to the size of our data set. Its memory efficiency definitely fits within a scenario were we have small reasorces. Its f1 score on the test set was also best out of all, out of the box.</p>
-<hr>
-<p><strong>GaussianNB:</strong> Applies Baye's theorem with the assumption of independence between every pair of attributes. From the training data it calculates particular P(<strong>x</strong>|y)'s  (i.e. given a label what is the probability of the input point <strong>x</strong>) fits them to a Gaussian distribution. It then uses that model, applying Bayes, to approximate P(y|<strong>x</strong>) for new inputs <strong>x</strong>.</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>Requires only a small amount of training data to estimate the necessary parameters.</p>
-</li>
-<li><p>They can be very fast compared to more sophisticated methods (evidence of this can be seen in the table)</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li><p>Bad estimator of probabilities. (Not so relevant here)</p>
-</li>
-<li><p>Sklearn's implementation has little in the way of tune-ability.</p>
-</li>
-</ul>
-<p><strong>Chosen/Rejected:</strong> Rejected</p>
-<p><strong>Reasoning:</strong> GaussianNB was one of the fastest to be trained and had a decent average f1 test score. Two of Naive Bayes' advantages that are relevant to this problem are, its capacity to train on small amounts of data and its training speed. In this sense it is perfectly suited for the situation at hand. The main reason I pass on it, is the lack of tune-able parameters in sklearn's GaussianNB implementation. So I don't have a real chance of improving its performance from here, what I see now is what I get (I maybe wrong on this).</p>
-<hr>
-<p><strong>AdaBoostClassifier:</strong> It trains multiple weak classifiers (weak meaning they are better than guessing i.e. generalization error &lt; 0.5), and then combines them into a single boosted classifier using a weighted voting scheme.</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>Computationally efficient (taken from Intro to boosting pdf)</p>
-</li>
-<li><p>No difficult parameters to set</p>
-</li>
-<li><p>Versatile – a wide range of weak learners can be used</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li><p>Weak learner should not be too complex to avoid overffiting</p>
-</li>
-<li><p>There needs to be enough data so that the weak learner requirement is satisfied.</p>
-</li>
-</ul>
-<p><strong>Chosen/Rejected:</strong> Rejected</p>
-<p><strong>Reasoning:</strong> From the above table, AdaBoost seems expensive to train as its average training time of 0.1022s is approximately 15 times slower than the next slowest time of 0.069s by SVC. Also from the Intro to Boosting reading, it seems that choosing the weak learner properly is particularly important for this algorithm to perform well. Simply using the default DecisionTree weak learner from sklearn's implementation, resulted in the somewhat costly, and not particularly strong performance seen in the table above. I experimented briefly using grid search and a parameter set (the DecisionTree was left as the weak learner choice) but did not achieve significants gains in performance given the computational cost. This leads me to believe that experimenting with the choice of weak learner would be more fruitful, but I opted to postpone such a study for later.</p>
-<hr>
-<p><strong>KNeighborsClassifier:</strong>  Given an input point, <strong>x</strong>, it finds the k closest points to <strong>x</strong> in the training set and then applies a majority voting scheme regarding their labels, to determine the label for <strong>x</strong>.</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>Relatively fast prediction time in general, O[Dlog(N)] where D is the number attributes and N the number of training examples (D is unlikely to change much in this scenario, so its really more like O[log(N)] )</p>
-</li>
-<li><p>Easier to conceptualize and reason about than other more sophisticated models.</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Not memory efficient, since it makes predictions by directly using the data as a “model”. Must therefore keep the data stored.  </li>
-</ul>
-<p><strong>Chosen/Rejected:</strong> Chosen</p>
-<p><strong>Reasoning:</strong>  Upon closer reading of section 1.6.4 of Sklearn's documentation, <em>"Nearest Neighbor Algorithms"</em>, KNN as, I used it here, makes a choice of algorithm based on the data passed to fit(). The choice being between brute force, K-D tree, and Ball tree. This data set is too large for brute force (n = 300 &gt;&gt; 30) so we can consider KNN here as either K-D or Ball tree. Now, since the size of the feature space, is for computational purposes, D = 48 &gt; 20 (after adding all the dummy classes) it is likely it is choosing Ball Tree. In any case its time complexity at prediction is O[Dlog(N)] which explains why its slower than the decision tree. Since the amount of student features is not likely to change much if KNN is put to practice in our scenario (suppose we choose it in the end for use of the school board), this can be consider a pro for this algorithm, since it is essentially logarithmic, just as the decision tree.<br>
-Also from sklearn;</p>
+<p>At CodeReview2 my reviewer reminded me of how Kfold cross validation can be used to get the maximum use of a small data set like the one here. After separating the data into a training set (size 300) and test set (size 95), I used Kfold cross-validation on the training set with 10 folds to have a basic handle on how the models were performing on average. It is clearer now how they differ in performance. The decision tree trails all others in its f1 test score, while scoring perfectly on the training set (which no other does) so it seems to be an over-fitter. This is a known possible problem with trees. The SVC tops all others with an average test f1 of 0.808. KNN doesn't trail far with 0.781. Naive Bayes and AdaBoost are pretty much tied with test f1's of 0.768 and 0.767 respectively.</p>
+<p>As to narrowing the field to 3 models, I will discount AdaBoostClassifier and GaussianNB. Though I did not find this explicitly stated in the documentation, from the above table, AdaBoost is clearly expensive to train as its average training time of 0.1022s is approximately 15 times slower than the next slowest time of 0.069s by SVC. Since computational cost is a constraint, other algorithms may better serve this problem. GaussianNB was one of the fastest to be trained and had a decent average f1 test score. Two of Naive Bayes' advantages that are relevant to this problem are, its capacity to train on small amounts of data and its training speed. In this sense it is perfectly suited for the situation at hand. The main reason I passe on it, is the lack of tune-able parameters in sklearn's GaussianNB implementation. So I don't have a real chance of improving its performance from here, what I see now is what I get (I maybe wrong on this).</p>
+<p>As touched on in my previous comments decision tree is easy to conceptualize. It is also fast to use, as predicting data has logarithmic cost on number of  features (it had the fastest prediction time above too). A possible problem that I might encounter is its instability in generating a tree consistently upon data variation. Upon closer reading of section 1.6.4 of Sklearn's documentation, "Nearest Neighbor Algorithms", KNN as, I used it here, makes a choice of algorithm based on the data passed to fit(). The choice being between brute force, K-D tree, and Ball tree. This data set is too large for brute force (n = 300 &gt;&gt; 30) so we can consider KNN here as either K-D or Ball tree. Now, since the size of the feature space, is for computational purposes, D = 48 &gt; 20 (after adding all the dummy classes) it is likely it is choosing Ball Tree. In any case its time complexity at prediction is O[Dlog(N)] which explains why its slower than the decision tree. Since the amount of student features is not likely to change much if KNN is put to practice in our scenario (suppose we choose it in the end for use of the school board), this can be consider a pro for this algorithm, since it is essentially logarithmic, just as the decision tree. Also from sklearn;</p>
 <p>“Ball tree and KD tree query times can be greatly influenced by data structure. In general, sparser data with a smaller intrinsic dimensionality leads to faster query times.”</p>
-<p>If I'm understanding correctly (may very well not be) since sparsity of the data set “refers to the degree to which the data fills the parameter space” ,  then it seems to me that the data set here is somewhat sparse. The reason I say this is because when we added the dummies, essentially we added a lot of zero components to each student “vector”. Since the student's mother, say, cannot be partially between being a Teacher and Health care worker, in regard to those categorical variables, there are regions in the feature space that are empty. Because no vectors will ever have components that are non-zero there. If this is indeed the case, then it would also be a pro for KNN.  However if our training data set were to grow very large, this will come at significant memory cost.</p>
-<p>Next I try each of these models with varying training set sizes, from 50 students to 300 in increments of 50, for a total of 6 training set sizes.</p>
+<p>If I'm understanding correctly (may very well not be) since sparcity of the data set “refers to the degree to which the data fills the parameter space” ,  then it seems to me that the data set here is somewhat sparse. The reason I say this is because when we added the dummies, essentially we added a lot of zero components to each student “vector”. Since the student's mother, say, cannot be partially between being a Teacher and Healthcare worker, in regard to those categorical variables, there are regions in the feature space that are empty. Because no vectors will ever have components that are non-zero there. If this is indeed the case, then it would also be a pro for KNN. The advantages of SVC are that it is memory efficient because it only uses a subset of the training points in the decision function. This fits our computational cost constraint. It is also very customizable at the tuning phase (4 kernel options plus parameters). Since we are not concerned with probability estimates here, which SVC does expensively, it has little downsides. Next I try each of these models with varying training set sizes, from 50 students to 300 in increments of 50, for a total of 6 training set sizes.</p>
 
 </div>
 </div>
@@ -806,7 +709,7 @@ Also from sklearn;</p>
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Helper function makeTable</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Helper function makeTable</span>
 <span class="k">def</span> <span class="nf">makeTable</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">index_list</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
     
     <span class="c1">#Gathering column and row labels for the table</span>
@@ -842,8 +745,8 @@ Also from sklearn;</p>
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Helper function return a set of k unique random indices in range 0 to N</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Helper function return a set of k unique random indices in range 0 to N</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
 <span class="k">def</span> <span class="nf">getIndices</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="p">[]</span>
@@ -864,7 +767,7 @@ Also from sklearn;</p>
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># Chosen Classifiers</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Chosen Classifiers</span>
 <span class="n">chosen_clfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span> <span class="o">=</span> <span class="s2">&quot;entropy&quot;</span><span class="p">),</span>
         <span class="n">SVC</span><span class="p">(</span><span class="n">C</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;rbf&quot;</span><span class="p">),</span>
         <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)]</span>
@@ -875,7 +778,7 @@ Also from sklearn;</p>
 <span class="n">index_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">getIndices</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">training_sizes</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">chosen_clfs</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">clf</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="k">print</span> <span class="n">clf</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
     <span class="n">table</span> <span class="o">=</span> <span class="n">makeTable</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">index_list</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
 </pre></div>
@@ -1135,9 +1038,9 @@ Also from sklearn;</p>
 <div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># TODO: Fine-tune your model and report the best F1 score</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">grid_search</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">make_scorer</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Fine-tune your model and report the best F1 score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span>
 
 <span class="n">scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">F1</span><span class="p">)</span>
 
@@ -1151,13 +1054,13 @@ Also from sklearn;</p>
 <span class="k">def</span> <span class="nf">gridIt</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="c1">#Grid search folds = 10, for consistency with previous computations</span>
     <span class="n">grid_clf</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">scorer</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="n">clf</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
-    <span class="nb">print</span> <span class="s2">&quot;Grid search time:&quot;</span><span class="p">,</span> <span class="n">timeTraining</span><span class="p">(</span><span class="n">grid_clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s2">&quot;Parameters of tuned model: &quot;</span><span class="p">,</span> <span class="n">grid_clf</span><span class="o">.</span><span class="n">best_params_</span>
+    <span class="k">print</span> <span class="n">clf</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="k">print</span> <span class="s2">&quot;Grid search time:&quot;</span><span class="p">,</span> <span class="n">timeTraining</span><span class="p">(</span><span class="n">grid_clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;Parameters of tuned model: &quot;</span><span class="p">,</span> <span class="n">grid_clf</span><span class="o">.</span><span class="n">best_params_</span>
     <span class="n">y_pred</span><span class="p">,</span> <span class="n">predict_t</span> <span class="o">=</span> <span class="n">predictAndTime</span><span class="p">(</span><span class="n">grid_clf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s2">&quot;f1_score and prediction time on X_test, y_test: &quot;</span>
-    <span class="nb">print</span> <span class="n">F1</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="n">predict_t</span>
-    <span class="nb">print</span> <span class="s1">&#39;------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="k">print</span> <span class="s2">&quot;f1_score and prediction time on X_test, y_test: &quot;</span>
+    <span class="k">print</span> <span class="n">F1</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="n">predict_t</span>
+    <span class="k">print</span> <span class="s1">&#39;------------------</span><span class="se">\n</span><span class="s1">&#39;</span>
     
 <span class="n">gridIt</span><span class="p">(</span><span class="n">KNeighborsClassifier</span><span class="p">(),</span> <span class="n">neigh_param</span><span class="p">)</span>
 </pre></div>
@@ -1213,7 +1116,7 @@ by the SVC, which is more costly to train. Still its improvement after tuning wa
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython2"><pre><span></span> 
 </pre></div>
 
 </div>
