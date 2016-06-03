@@ -1,2 +1,4 @@
 #ignore the projects zip file
 customer_segments.zip
+*.pyc
+.gitignore

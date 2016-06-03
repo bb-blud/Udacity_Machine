@@ -2,7 +2,11 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "# Machine Learning Engineer Nanodegree\n",
     "## Unsupervised Learning\n",
@@ -11,7 +15,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "Welcome to the third project of the Machine Learning Engineer Nanodegree! In this notebook, some template code has already been provided for you, and it will be your job to implement the additional functionality necessary to successfully complete this project. Sections that begin with **'Implementation'** in the header indicate that the following block of code will require additional functionality which you must provide. Instructions will be provided for each section and the specifics of the implementation are marked in the code block with a `'TODO'` statement. Please be sure to read the instructions carefully!\n",
     "\n",
@@ -22,7 +30,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "## Getting Started\n",
     "\n",
@@ -35,11 +47,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Wholesale customers dataset has 440 samples with 6 features each.\n"
+     ]
+    }
+   ],
    "source": [
     "# Import libraries necessary for this project\n",
     "import numpy as np\n",
@@ -60,8 +84,27 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
+   "outputs": [],
+   "source": [
+    "#ScratchWork\n"
+   ]
+  },
+  {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "## Data Exploration\n",
     "In this section, you will begin exploring the data through visualizations and code to understand how each feature is related to the others. You will observe a statistical description of the dataset, consider the relevance of each feature, and select a few sample data points from the dataset which you will track through the course of this project.\n",
@@ -71,11 +114,134 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Fresh</th>\n",
+       "      <th>Milk</th>\n",
+       "      <th>Grocery</th>\n",
+       "      <th>Frozen</th>\n",
+       "      <th>Detergents_Paper</th>\n",
+       "      <th>Delicatessen</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>count</th>\n",
+       "      <td>440.000000</td>\n",
+       "      <td>440.000000</td>\n",
+       "      <td>440.000000</td>\n",
+       "      <td>440.000000</td>\n",
+       "      <td>440.000000</td>\n",
+       "      <td>440.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>mean</th>\n",
+       "      <td>12000.297727</td>\n",
+       "      <td>5796.265909</td>\n",
+       "      <td>7951.277273</td>\n",
+       "      <td>3071.931818</td>\n",
+       "      <td>2881.493182</td>\n",
+       "      <td>1524.870455</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>std</th>\n",
+       "      <td>12647.328865</td>\n",
+       "      <td>7380.377175</td>\n",
+       "      <td>9503.162829</td>\n",
+       "      <td>4854.673333</td>\n",
+       "      <td>4767.854448</td>\n",
+       "      <td>2820.105937</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>min</th>\n",
+       "      <td>3.000000</td>\n",
+       "      <td>55.000000</td>\n",
+       "      <td>3.000000</td>\n",
+       "      <td>25.000000</td>\n",
+       "      <td>3.000000</td>\n",
+       "      <td>3.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25%</th>\n",
+       "      <td>3127.750000</td>\n",
+       "      <td>1533.000000</td>\n",
+       "      <td>2153.000000</td>\n",
+       "      <td>742.250000</td>\n",
+       "      <td>256.750000</td>\n",
+       "      <td>408.250000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>50%</th>\n",
+       "      <td>8504.000000</td>\n",
+       "      <td>3627.000000</td>\n",
+       "      <td>4755.500000</td>\n",
+       "      <td>1526.000000</td>\n",
+       "      <td>816.500000</td>\n",
+       "      <td>965.500000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75%</th>\n",
+       "      <td>16933.750000</td>\n",
+       "      <td>7190.250000</td>\n",
+       "      <td>10655.750000</td>\n",
+       "      <td>3554.250000</td>\n",
+       "      <td>3922.000000</td>\n",
+       "      <td>1820.250000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>max</th>\n",
+       "      <td>112151.000000</td>\n",
+       "      <td>73498.000000</td>\n",
+       "      <td>92780.000000</td>\n",
+       "      <td>60869.000000</td>\n",
+       "      <td>40827.000000</td>\n",
+       "      <td>47943.000000</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "               Fresh          Milk       Grocery        Frozen  \\\n",
+       "count     440.000000    440.000000    440.000000    440.000000   \n",
+       "mean    12000.297727   5796.265909   7951.277273   3071.931818   \n",
+       "std     12647.328865   7380.377175   9503.162829   4854.673333   \n",
+       "min         3.000000     55.000000      3.000000     25.000000   \n",
+       "25%      3127.750000   1533.000000   2153.000000    742.250000   \n",
+       "50%      8504.000000   3627.000000   4755.500000   1526.000000   \n",
+       "75%     16933.750000   7190.250000  10655.750000   3554.250000   \n",
+       "max    112151.000000  73498.000000  92780.000000  60869.000000   \n",
+       "\n",
+       "       Detergents_Paper  Delicatessen  \n",
+       "count        440.000000    440.000000  \n",
+       "mean        2881.493182   1524.870455  \n",
+       "std         4767.854448   2820.105937  \n",
+       "min            3.000000      3.000000  \n",
+       "25%          256.750000    408.250000  \n",
+       "50%          816.500000    965.500000  \n",
+       "75%         3922.000000   1820.250000  \n",
+       "max        40827.000000  47943.000000  "
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
    "source": [
     "# Display a description of the dataset\n",
     "display(data.describe())"
@@ -83,7 +249,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Implementation: Selecting Samples\n",
     "To get a better understanding of the customers and how their data will transform through the analysis, it would be best to select a few sample data points and explore them in more detail. In the code block below, add **three** indices of your choice to the `indices` list which will represent the customers to track. It is suggested to try different sets of samples until you obtain customers that vary significantly from one another."
@@ -91,14 +261,86 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 56,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Fresh</th>\n",
+       "      <th>Milk</th>\n",
+       "      <th>Grocery</th>\n",
+       "      <th>Frozen</th>\n",
+       "      <th>Detergents_Paper</th>\n",
+       "      <th>Delicatessen</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>518</td>\n",
+       "      <td>4180</td>\n",
+       "      <td>3600</td>\n",
+       "      <td>659</td>\n",
+       "      <td>122</td>\n",
+       "      <td>654</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>14903</td>\n",
+       "      <td>2032</td>\n",
+       "      <td>2479</td>\n",
+       "      <td>576</td>\n",
+       "      <td>955</td>\n",
+       "      <td>328</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>3062</td>\n",
+       "      <td>6154</td>\n",
+       "      <td>13916</td>\n",
+       "      <td>230</td>\n",
+       "      <td>8933</td>\n",
+       "      <td>2784</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Fresh  Milk  Grocery  Frozen  Detergents_Paper  Delicatessen\n",
+       "0    518  4180     3600     659               122           654\n",
+       "1  14903  2032     2479     576               955           328\n",
+       "2   3062  6154    13916     230              8933          2784"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[392, 132, 245]\n",
+      "Chosen samples of wholesale customers dataset:\n"
+     ]
+    }
+   ],
    "source": [
     "# TODO: Select three indices of your choice you wish to sample from the dataset\n",
-    "indices = []\n",
+    "indices = [392, 132, 245]\n",
+    "print indices\n",
     "\n",
     "# Create a DataFrame of the chosen samples\n",
     "samples = pd.DataFrame(data.loc[indices], columns = data.keys()).reset_index(drop = True)\n",
@@ -108,7 +350,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Question 1\n",
     "Consider the total purchase cost of each product category and the statistical description of the dataset above for your sample customers.  \n",
@@ -118,14 +364,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Implementation: Feature Relevance\n",
     "One interesting thought to consider is if one (or more) of the six product categories is actually relevant for understanding customer purchasing. That is to say, is it possible to determine whether customers purchasing some amount of one category of products will necessarily purchase some proportional amount of another category of products? We can make this determination quite easily by training a supervised regression learner on a subset of the data with one feature removed, and then score how well that model can predict the removed feature.\n",
@@ -140,9 +394,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -161,7 +419,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Question 2\n",
     "*Which feature did you attempt to predict? What was the reported prediction score? Is this feature is necessary for identifying customers' spending habits?*  \n",
@@ -170,14 +432,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Visualize Feature Distributions\n",
     "To get a better understanding of the dataset, we can construct a scatter matrix of each of the six product features present in the data. If you found that the feature you attempted to predict above is relevant for identifying a specific customer, then the scatter matrix below may not show any correlation between that feature and the others. Conversely, if you believe that feature is not relevant for identifying a specific customer, the scatter matrix might show a correlation between that feature and another feature in the data. Run the code block below to produce a scatter matrix."
@@ -185,9 +455,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -197,7 +471,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Question 3\n",
     "*Are there any pairs of features which exhibit some degree of correlation? Does this confirm or deny your suspicions about the relevance of the feature you attempted to predict? How is the data for those features distributed?*  \n",
@@ -206,14 +484,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "## Data Preprocessing\n",
     "In this section, you will preprocess the data to create a better representation of customers by performing a scaling on the data and detecting (and optionally removing) outliers. Preprocessing data is often times a critical step in assuring that results you obtain from your analysis are significant and meaningful."
@@ -221,7 +507,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Implementation: Feature Scaling\n",
     "If data is not normally distributed, especially if the mean and median vary significantly (indicating a large skew), it is most [often appropriate](http://econbrowser.com/archives/2014/02/use-of-logarithms-in-economics) to apply a non-linear scaling — particularly for financial data. One way to achieve this scaling is by using a [Box-Cox test](http://scipy.github.io/devdocs/generated/scipy.stats.boxcox.html), which calculates the best power transformation of the data that reduces skewness. A simpler approach which can work in most cases would be applying the natural logarithm.\n",
@@ -233,9 +523,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -251,7 +545,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Observation\n",
     "After applying a natural logarithm scaling to the data, the distribution of each feature should appear much more normal. For any pairs of features you may have identified earlier as being correlated, observe here whether that correlation is still present (and whether it is now stronger or weaker than before).\n",
@@ -261,9 +559,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -273,7 +575,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Implementation: Outlier Detection\n",
     "Detecting outliers in the data is extremely important in the data preprocessing step of any analysis. The presence of outliers can often skew results which take into consideration these data points. There are many \"rules of thumb\" for what constitutes an outlier in a dataset. Here, we will use [Tukey's Method for identfying outliers](http://datapigtechnologies.com/blog/index.php/highlighting-outliers-in-your-data-with-the-tukey-method/): An *outlier step* is calculated as 1.5 times the interquartile range (IQR). A data point with a feature that is beyond an outlier step outside of the IQR for that feature is considered abnormal.\n",
@@ -290,9 +596,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -322,7 +632,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": false
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "source": [
     "### Question 4\n",
@@ -331,14 +643,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "## Feature Transformation\n",
     "In this section you will use principal component analysis (PCA) to draw conclusions about the underlying structure of the wholesale customer data. Since using PCA on a dataset calculates the dimensions which best maximize variance, we will find which compound combinations of features best describe customers."
@@ -347,7 +667,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": false
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "source": [
     "### Implementation: PCA\n",
@@ -361,9 +683,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -380,7 +706,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": false
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "source": [
     "### Question 5\n",
@@ -390,14 +718,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Observation\n",
     "Run the code below to see how the log-transformed sample data has changed after having a PCA transformation applied to it in six dimensions. Observe the numerical value for the first four dimensions of the sample points. Consider if this is consistent with your initial interpretation of the sample points."
@@ -405,9 +741,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -417,7 +757,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Implementation: Dimensionality Reduction\n",
     "When using principal component analysis, one of the main goals is to reduce the dimensionality of the data — in effect, reducing the complexity of the problem. Dimensionality reduction comes at a cost: Fewer dimensions used implies less of the total variance in the data is being explained. Because of this, the *cumulative explained variance ratio* is extremely important for knowing how many dimensions are necessary for the problem. Additionally, if a signifiant amount of variance is explained by only two or three dimensions, the reduced data can be visualized afterwards.\n",
@@ -430,9 +774,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -451,7 +799,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Observation\n",
     "Run the code below to see how the log-transformed sample data has changed after having a PCA transformation applied to it using only two dimensions. Observe how the values for the first two dimensions remains unchanged when compared to a PCA transformation in six dimensions."
@@ -459,9 +811,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -471,7 +827,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "## Clustering\n",
     "\n",
@@ -480,7 +840,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Question 6\n",
     "*What are the advantages to using a K-Means clustering algorithm? What are the advantages to using a Gaussian Mixture Model clustering algorithm? Given your observations about the wholesale customer data so far, which of the two algorithms will you use and why?*"
@@ -488,14 +852,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Implementation: Creating Clusters\n",
     "Depending on the problem, the number of clusters that you expect to be in the data may already be known. When the number of clusters is not known *a priori*, there is no guarantee that a given number of clusters best segments the data, since it is unclear what structure exists in the data — if any. However, we can quantify the \"goodness\" of a clustering by calculating each data point's *silhouette coefficient*. The [silhouette coefficient](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html) for a data point measures how similar it is to its assigned cluster from -1 (dissimilar) to 1 (similar). Calculating the *mean* silhouette coefficient provides for a simple scoring method of a given clustering.\n",
@@ -511,9 +883,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -535,7 +911,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Question 7\n",
     "*Report the silhouette score for several cluster numbers you tried. Of these, which number of clusters has the best silhouette score?* "
@@ -543,14 +923,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Cluster Visualization\n",
     "Once you've chosen the optimal number of clusters for your clustering algorithm using the scoring metric above, you can now visualize the results by executing the code block below. Note that, for experimentation purposes, you are welcome to adjust the number of clusters for your clustering algorithm to see various visualizations. The final visualization provided should, however, correspond with the optimal number of clusters. "
@@ -558,9 +946,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -570,7 +962,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Implementation: Data Recovery\n",
     "Each cluster present in the visualization above has a central point. These centers (or means) are not specifically data points from the data, but rather the *averages* of all the data points predicted in the respective clusters. For the problem of creating customer segments, a cluster's center point corresponds to *the average customer of that segment*. Since the data is currently reduced in dimension and scaled by a logarithm, we can recover the representative customer spending from these data points by applying the inverse transformations.\n",
@@ -582,9 +978,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -604,7 +1004,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": false
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "source": [
     "### Question 8\n",
@@ -614,7 +1016,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
@@ -622,7 +1028,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": false
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "source": [
     "### Question 9\n",
@@ -633,9 +1041,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
-    "collapsed": false
+    "autoscroll": "json-false",
+    "collapsed": false,
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -647,7 +1059,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": false
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "source": [
     "**Answer:**"
@@ -655,7 +1069,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "## Conclusion"
    ]
@@ -663,7 +1081,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": true
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "source": [
     "### Question 10\n",
@@ -673,14 +1093,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Question 11\n",
     "*Assume the wholesale distributor wanted to predict a new feature for each customer based on the purchasing information available. How could the wholesale distributor use the structure of the data to assist a supervised learning analysis?*  \n",
@@ -689,14 +1117,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Visualizing Underlying Distributions\n",
     "\n",
@@ -707,10 +1143,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 0,
    "metadata": {
+    "autoscroll": "json-false",
     "collapsed": false,
-    "scrolled": false
+    "ein.tags": [
+     "worksheet-0"
+    ]
    },
    "outputs": [],
    "source": [
@@ -720,7 +1159,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "### Question 12\n",
     "*How well does the clustering algorithm and number of clusters you've chosen compare to this underlying distribution of Hotel/Restaurant/Cafe customers to Retailer customers? Are there customer segments that would be classified as purely 'Retailers' or 'Hotels/Restaurants/Cafes' by this distribution? Would you consider these classifications as consistent with your previous definition of the customer segments?*"
@@ -728,14 +1171,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "**Answer:**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "ein.tags": [
+     "worksheet-0"
+    ]
+   },
    "source": [
     "> **Note**: Once you have completed all of the code implementations and successfully answered each question above, you may finalize your work by exporting the iPython Notebook as an HTML document. You can do this by using the menu above and navigating to  \n",
     "**File -> Download as -> HTML (.html)**. Include the finished document along with this notebook as your submission."
@@ -745,7 +1196,6 @@
  "metadata": {
   "kernelspec": {
    "display_name": "Python 2",
-   "language": "python",
    "name": "python2"
   },
   "language_info": {
@@ -759,7 +1209,8 @@
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython2",
    "version": "2.7.11"
-  }
+  },
+  "name": "customer_segments.ipynb"
  },
  "nbformat": 4,
  "nbformat_minor": 0
