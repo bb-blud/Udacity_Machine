@@ -14350,7 +14350,7 @@ listed above.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Generate PCA results plot</span>
@@ -14775,7 +14775,11 @@ First through fourth:  0.924442986542
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong>
+Dimension four clearly points almost exclusively in the direction of the Frozen feature and away from Delicatessen and fresh. Dimension three tends<br>
+to represent Frozen and Detergents purchases and <em>not</em> Delicatessen. Dimensions one and two tend to represent a more even mix of puchase directions<br>
+and they seem to almost exactly complement each other. Where dimension one strongly represents Detergent purchases, followed by Grocery and Milk at<br>
+more or less half its size, dimension two pretty evenly represents Fresh, Frozen, and Delicatessen, the exact components that dimension one neglects.</p>
 
 </div>
 </div>
@@ -14792,7 +14796,7 @@ First through fourth:  0.924442986542
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after having a PCA transformation applied</span>
@@ -14800,6 +14804,64 @@ First through fourth:  0.924442986542
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Dimension 1</th>
+      <th>Dimension 2</th>
+      <th>Dimension 3</th>
+      <th>Dimension 4</th>
+      <th>Dimension 5</th>
+      <th>Dimension 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.7389</td>
+      <td>-2.4439</td>
+      <td>-1.8543</td>
+      <td>0.3034</td>
+      <td>-1.1978</td>
+      <td>0.0740</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.5108</td>
+      <td>-0.6628</td>
+      <td>1.1540</td>
+      <td>-0.9021</td>
+      <td>0.4783</td>
+      <td>-0.2952</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.1357</td>
+      <td>-0.3003</td>
+      <td>-0.6840</td>
+      <td>-1.2441</td>
+      <td>0.6467</td>
+      <td>0.1199</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14825,14 +14887,16 @@ First through fourth:  0.924442986542
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Fit PCA to the good data using only two dimensions</span>
-<span class="n">pca</span> <span class="o">=</span> <span class="bp">None</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="c"># TODO: Fit PCA to the good data using only two dimensions</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">good_data</span><span class="p">)</span>
 
 <span class="c"># TODO: Apply a PCA transformation the good data</span>
-<span class="n">reduced_data</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">reduced_data</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">good_data</span><span class="p">)</span>
 
 <span class="c"># TODO: Apply a PCA transformation to the sample log-data</span>
-<span class="n">pca_samples</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">pca_samples</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">log_samples</span><span class="p">)</span>
 
 <span class="c"># Create a DataFrame for the reduced data</span>
 <span class="n">reduced_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Dimension 1&#39;</span><span class="p">,</span> <span class="s">&#39;Dimension 2&#39;</span><span class="p">])</span>
