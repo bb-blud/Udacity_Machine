@@ -385,7 +385,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
@@ -2499,7 +2499,7 @@ correlation is even weaker still. The distributions of all features are skewed, 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Scale the data using the natural logarithm</span>
@@ -6244,7 +6244,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Display the log-transformed sample data</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># Display the log-transformed sample data ^^</span>
 <span class="n">display</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
 <span class="k">print</span>
 <span class="n">display</span><span class="p">(</span><span class="n">log_samples</span><span class="p">)</span>
@@ -6257,64 +6257,6 @@ AAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Fresh</th>
-      <th>Milk</th>
-      <th>Grocery</th>
-      <th>Frozen</th>
-      <th>Detergents_Paper</th>
-      <th>Delicatessen</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>518</td>
-      <td>4180</td>
-      <td>3600</td>
-      <td>659</td>
-      <td>122</td>
-      <td>654</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>14903</td>
-      <td>2032</td>
-      <td>2479</td>
-      <td>576</td>
-      <td>955</td>
-      <td>328</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3062</td>
-      <td>6154</td>
-      <td>13916</td>
-      <td>230</td>
-      <td>8933</td>
-      <td>2784</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-</pre>
-</div>
-</div>
 
 <div class="output_area"><div class="prompt"></div>
 
@@ -6367,6 +6309,64 @@ AAAASUVORK5CYII=
 
 </div>
 
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fresh</th>
+      <th>Milk</th>
+      <th>Grocery</th>
+      <th>Frozen</th>
+      <th>Detergents_Paper</th>
+      <th>Delicatessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>518</td>
+      <td>4180</td>
+      <td>3600</td>
+      <td>659</td>
+      <td>122</td>
+      <td>654</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14903</td>
+      <td>2032</td>
+      <td>2479</td>
+      <td>576</td>
+      <td>955</td>
+      <td>328</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3062</td>
+      <td>6154</td>
+      <td>13916</td>
+      <td>230</td>
+      <td>8933</td>
+      <td>2784</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -6392,7 +6392,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># For each feature find the data points with extreme high or low values</span>
@@ -14332,7 +14332,7 @@ listed above.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
@@ -14353,7 +14353,7 @@ listed above.</p>
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Generate PCA results plot</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># Generate PCA results plot ^^</span>
 <span class="n">pca_results</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">pca_results</span><span class="p">(</span><span class="n">good_data</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span>
 </pre></div>
 
@@ -14741,7 +14741,7 @@ IiIiIU8dIxERERERCXnqGImIiIiISMhTx0hERERERELe/wMrgB/5rUL9hwAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">evr</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
@@ -14799,7 +14799,7 @@ more or less half its size, dimension two pretty evenly represents Fresh, Frozen
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after having a PCA transformation applied</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after having a PCA transformation applied ^^</span>
 <span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pca_samples</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">pca_results</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
 </pre></div>
 
@@ -14884,7 +14884,7 @@ more or less half its size, dimension two pretty evenly represents Fresh, Frozen
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
@@ -14919,7 +14919,7 @@ more or less half its size, dimension two pretty evenly represents Fresh, Frozen
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after applying PCA transformation in two dimensions</span>
@@ -14927,6 +14927,48 @@ more or less half its size, dimension two pretty evenly represents Fresh, Frozen
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Dimension 1</th>
+      <th>Dimension 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.7389</td>
+      <td>-2.4439</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.5108</td>
+      <td>-0.6628</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.1357</td>
+      <td>-0.3003</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14957,6 +14999,39 @@ more or less half its size, dimension two pretty evenly represents Fresh, Frozen
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
+<p>From what I've been <a href="https://en.wikipedia.org/wiki/Cluster_analysis#Centroid-based_clustering">reading</a> and <a href="https://www.youtube.com/watch?v=REypj2sy_5U&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt">watching</a>, K-Means clustering can be thought of as a special case of Gaussian Mixture Model where,<br>
+after calculating $P(M_k|x_i)$ for each mixture $M_k$, one then gives a probabilty of 1 to the mixture that yeilded the highest probabilty, and<br>
+a probability of 0 to the rest. This means that $x_i$ would be assigned to the nearest centriod $\mu_k$, which is what K-means does. Recalculating<br>
+$\mu_k$ would similarly reduce to simply averaging the members of a particular cluster $M_k$. From this perspective K-Means is a lighter and<br>
+simpler version of a more complex (but in some ways more expressive) algorithm.</p>
+<p><strong>Advantages</strong></p>
+<p>K-Means:</p>
+<ul>
+<li><p>Simplicity of the algorithm. Only intuitive vector arithmetic computations are being performed.</p>
+</li>
+<li><p>The computational simplicity I assume is what makes it highly <a href="http://scikit-learn.org/stable/modules/clustering.html#overview-of-clustering-methods">scalable</a> (scroll to table under the graphs)</p>
+</li>
+<li><p>It does not assume a particular distribution associated with the data. This might make it more "open minded"<br>
+to whatever data it is exposed to, even if its not Gaussian.</p>
+</li>
+</ul>
+<p>Gaussian Mixture:</p>
+<ul>
+<li><p>For data of dimension greater than one, GMM will take in to account covariance of the features so<br>
+the clusters (mixtures) can tailor to the shape of the cluster. If the underlying data is in fact<br>
+suitably represented by Gaussian shape clusters, this migh make it more precise.</p>
+</li>
+<li><p>Again <em>if</em> the underlying data is a patchwork of Gaussian distributions, GMM can find better<br>
+defined boundaries between clusters than K-Means. For swathes of points between clusters, K-Means<br>
+can be rather <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm#/media/File:ClusterAnalysis_Mouse.svg">arbitrary</a>
+in its delineation of a boundary, whereas GMM can infer more a reasonable partion.</p>
+</li>
+</ul>
+<p>From what I have understood, the main reasons <em>not</em> to use GMM would be if the data in question was of a very large size, and if the data in<br>
+question was not modeled by a motely of Gaussian distributions. It seems in our case that neither of these things is a concern. Our data set<br>
+is relatively small, n = 400, <em>and</em> the log scaling actually exposed each feature to be pretty much normally distributed. Since we can gain,<br>
+as mentioned above, clusters with more freedom to shape themselves, we could get a more accurate clustering. For these reasons I think that<br>
+GMM is a better choice for this problem.</p>
 
 </div>
 </div>
