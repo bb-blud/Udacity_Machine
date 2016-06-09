@@ -15000,8 +15000,8 @@ more or less half its size, dimension two pretty evenly represents Fresh, Frozen
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p>From what I've been <a href="https://en.wikipedia.org/wiki/Cluster_analysis#Centroid-based_clustering">reading</a> and <a href="https://www.youtube.com/watch?v=REypj2sy_5U&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt">watching</a>, K-Means clustering can be thought of as a special case of Gaussian Mixture Model where,<br>
-after calculating $P(M_k|x_i)$ for each mixture $M_k$, one then gives a probabilty of 1 to the mixture that yeilded the highest probabilty, and<br>
-a probability of 0 to the rest. This means that $x_i$ would be assigned to the nearest centriod $\mu_k$, which is what K-means does. Recalculating<br>
+after calculating $P(M_k|x_i)$ for each mixture $M_k$, one then gives a probability of 1 to the mixture that yielded the highest probability, and<br>
+a probability of 0 to the rest. This means that $x_i$ would be assigned to the nearest centroid $\mu_k$, which is what K-means does. Recalculating<br>
 $\mu_k$ would similarly reduce to simply averaging the members of a particular cluster $M_k$. From this perspective K-Means is a lighter and<br>
 simpler version of a more complex (but in some ways more expressive) algorithm.</p>
 <p><strong>Advantages</strong></p>
@@ -15019,16 +15019,16 @@ to whatever data it is exposed to, even if its not Gaussian.</p>
 <ul>
 <li><p>For data of dimension greater than one, GMM will take in to account covariance of the features so<br>
 the clusters (mixtures) can tailor to the shape of the cluster. If the underlying data is in fact<br>
-suitably represented by Gaussian shape clusters, this migh make it more precise.</p>
+suitably represented by Gaussian shape clusters, this might make it more precise.</p>
 </li>
 <li><p>Again <em>if</em> the underlying data is a patchwork of Gaussian distributions, GMM can find better<br>
 defined boundaries between clusters than K-Means. For swathes of points between clusters, K-Means<br>
 can be rather <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm#/media/File:ClusterAnalysis_Mouse.svg">arbitrary</a>
-in its delineation of a boundary, whereas GMM can infer more a reasonable partion.</p>
+in its delineation of a boundary, whereas GMM can infer more a reasonable partition.</p>
 </li>
 </ul>
 <p>From what I have understood, the main reasons <em>not</em> to use GMM would be if the data in question was of a very large size, and if the data in<br>
-question was not modeled by a motely of Gaussian distributions. It seems in our case that neither of these things is a concern. Our data set<br>
+question was not modeled by a motley of Gaussian distributions. It seems in our case that neither of these things is a concern. Our data set<br>
 is relatively small, n = 400, <em>and</em> the log scaling actually exposed each feature to be pretty much normally distributed. Since we can gain,<br>
 as mentioned above, clusters with more freedom to shape themselves, we could get a more accurate clustering. For these reasons I think that<br>
 GMM is a better choice for this problem.</p>
