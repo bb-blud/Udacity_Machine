@@ -10599,8 +10599,8 @@ juM4jtOGRNYcJ7NiflbOauP+kVlox2lbvJHjOI7jOI7jOE5b4dbVHMdxHMdxHMdpK7yR4ziO4ziO
 I tried varying degrees of "outlyingness", the strictest being if a given index was flagged as an outlier for all six dimensions, and the weakest<br>
 being if it was flagged at least once, for some particular dimension (i.e. 1 &lt;= max_outlies &lt;=6 ). After plotting good_data for max_outlies 1, 2,<br>
 3, 5, 6 I settled for max_outlies = 2 (rather arbitrarily). Setting it to 1 made the above table of graphs too diffuse, some of the correlations<br>
-apparent in log_data seemed to wash out (not shown). After inpecting the above two tables of graphs, it appeared to me that the feature pairs I<br>
-felt were positively correlated in log_data, become even more so after removing indices flagged as outliers for 2 or more features (i.e. for<br>
+apparent in log_data seemed to wash out (not shown). After inspecting the above two tables of graphs, it appeared to me that the feature pairs I<br>
+felt were positively correlated in log_data, became even more so after removing indices flagged as outliers for 2 or more features (i.e. for<br>
 max_outlies = 2). This is especially true for the Milk-Grocery cells. When I strengthened the criteria for being an outlier (by setting<br>
 max_outlies &gt; 2) the table of graphs for good_data and for log_data began to look almost the same (not shown). This makes sense because fewer<br>
 indices are being excluded, so good_data and log_data are almost the same data. After these observations I removed the 25 outlying indexes<br>
@@ -11082,10 +11082,11 @@ First through fourth:  0.924442986542
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-Dimension four clearly points almost exclusively in the direction of the Frozen feature and away from Delicatessen and fresh. Dimension three tends<br>
-to represent Frozen and Detergents purchases and <em>not</em> Delicatessen. Dimensions one and two tend to represent a more even mix of puchase directions<br>
-and they seem to almost exactly complement each other. Where dimension one strongly represents Detergent purchases, followed by Grocery and Milk at<br>
-more or less half its size, dimension two pretty evenly represents Fresh, Frozen, and Delicatessen, the exact components that dimension one neglects.</p>
+Dimension four clearly points almost exclusively in the direction of the Frozen feature and away from Delicatessen and fresh. Dimension<br>
+three tendsto represent Frozen and Detergents purchases and <em>not</em> Delicatessen. Dimensions one and two tend to represent a more even mix of<br>
+puchase directions and they seem to almost exactly complement each other. Where dimension one strongly represents Detergent purchases,<br>
+followed by Grocery and Milk at more or less half its size, dimension two pretty evenly represents Fresh, Frozen, and Delicatessen, the<br>
+exact components that dimension one neglects.</p>
 
 </div>
 </div>
@@ -11307,8 +11308,9 @@ more or less half its size, dimension two pretty evenly represents Fresh, Frozen
 <p>From what I've been <a href="https://en.wikipedia.org/wiki/Cluster_analysis#Centroid-based_clustering">reading</a> and <a href="https://www.youtube.com/watch?v=REypj2sy_5U&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt">watching</a>, K-Means clustering can be thought of as a special case of Gaussian Mixture Model where,<br>
 after calculating $P(M_k|x_i)$ for each mixture $M_k$, one then gives a probability of 1 to the mixture that yielded the highest probability, and<br>
 a probability of 0 to the rest. This means that $x_i$ would be assigned to the nearest centroid $\mu_k$, which is what K-means does. Recalculating<br>
-$\mu_k$ would similarly reduce to simply averaging the members of a particular cluster $M_k$. From this perspective K-Means is a lighter and<br>
-simpler version of a more complex (but in some ways more expressive) algorithm.</p>
+$\mu_k$ would similarly reduce to simply averaging the members of a particular cluster $M_k$, again what K-means does. From this perspective<br>
+K-Means is a version of GMM where points are strictly assigned to a cluster (probability 1) rather than given a less commited "soft" assignment.<br>
+GMM entails more complex (but in some ways more expressive) calculations.</p>
 <p><strong>Advantages</strong></p>
 <p>K-Means:</p>
 <ul>
@@ -11332,7 +11334,7 @@ can be rather <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximiz
 in its delineation of a boundary, whereas GMM can infer more a reasonable partition.</p>
 </li>
 </ul>
-<p>From what I have understood, the main reasons <em>not</em> to use GMM would be if the data in question was of a very large size, and if the data in<br>
+<p>From what I have understood, the main reasons <em>not</em> to use GMM would be if the data in question was of a very large size, or if the data in<br>
 question was not modeled by a motley of Gaussian distributions. It seems in our case that neither of these things is a concern. Our data set<br>
 is relatively small, n = 400, <em>and</em> the log scaling actually exposed each feature to be pretty much normally distributed. Since we can gain,<br>
 as mentioned above, clusters with more freedom to shape themselves, we could get a more accurate clustering. For these reasons I think that<br>
@@ -12331,7 +12333,7 @@ Total Segment 1:  17268.0
 <p><strong>Answer:</strong> 
 The average customer assigned to Cluster 0 is at the 75 percentile  for Milk (just below actually), Grocery, Frozen, and and well above the 50th<br>
 for Detergents, I don't know if its appropriate to say maybe at the 70th for Detergents. This would tell me that there are less customers associated<br>
-with Cluster 0, and to me indeed the Cluster above looks less dense. The center customer for Cluster 0 also spends 1.6 times more in total than<br>
+with Cluster 0, and indeed the Cluster above looks less dense. The center customer for Cluster 0 also spends 1.6 times more in total than<br>
 than that of Cluster 1.<br>
 The average customer assigned to Cluster 1 on the other hand is only barely above the 25th percentile for Detergents.<br>
 It is at the 50th percentile for Fresh products and at the 25th for the rest of the categories. Fresh purchases constitute more than 50% of its<br>
@@ -12577,11 +12579,12 @@ Sample point 2 predicted to be in Cluster 0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-In terms of the total amount, and the heavier proportion of Milk and Grocery purchases (again curiosly for this sample, not Frozen), "Sample point<br>
-2" or as originally refered to, index 245, is clearly well placed in cluster 0. It is a large client with total purchases of 35079 mu. Index 132 or<br>
-"Sample point 1", is also particularly representative of cluster 0 since it so disproportionately favored Fresh purchases, something we saw in the<br>
-"center" customer of that cluster. Index 392, "Sample point 0", is simply so small that it is clearly a member of Cluster 1. Curiously, it <em>was</em><br>
-flagged as an outlier for "<em>at least one attribute</em>", though it didn't get culled under the stricter outlier requirement of max_outlies = 2.</p>
+"Sample point 2" or as originally refered to, index 245, is a large client with total purchases of 35079 mu. This, plus the heavier proportion of<br>
+Milk and Grocery purchases, clearly places it in Cluster 0. Again curiously, index 245 has very low frozen purchases, in that respect is unlike<br>
+the Cluster 0 center. Index 132 or "Sample point 1", is particularly representative of Cluster 1 in the sense that it so disproportionately<br>
+favors Fresh purchases, something we saw in the "center" customer of that cluster. Index 392, "Sample point 0", is simply so small that it is<br>
+clearly a member of Cluster 1. Curiously, it <em>was</em> flagged as an outlier for "<em>at least one attribute</em>", though it didn't get culled under the<br>
+stricter outlier requirement of max_outlies = 2.</p>
 
 </div>
 </div>
