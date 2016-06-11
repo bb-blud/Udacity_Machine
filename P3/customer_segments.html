@@ -586,7 +586,7 @@ milkshakes.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        Index 132's purchases mostly entail fresh products, accounting for 70 percent of its purchases. It is still below the 25th percentile<br>
 relative to the rest of the population in this category. It is in between the 50th and 25th percentile for Milk and Grocery, at the 50th for<br>
-Detergents_Paper and well below the 25th for Delicatessen. Again from the breakdown above, its total purchases are almost equal to those of a<br>
+Detergentsd/Paper and well below the 25th for Delicatessen. Again from the breakdown above, its total purchases are almost equal to those of a<br>
 customer that would be at the 50th percentile mark. This indicates that index 132 is a medium sized purchaser. Since the bulk of its purchases<br>
 are for fresh products, with a good amount of Grocery, and being at the 50th percentile for Detergents/Paper, it could mean that index 132 is a<br>
 restaurant preparing fresh food (not frozen, way below the 25th) and requiring lots of cleaning. It could also be a small market convenience store.<br>
@@ -595,7 +595,7 @@ restaurant preparing fresh food (not frozen, way below the 25th) and requiring l
 represented by at least 8% of total purchases except for frozen items, which come at a negligible 0.7%. Its purchases seem somewhat more evenly<br>
 distributed compared  to the other two buyers. It just below the 25th percentile for Fresh, and way below it on Frozen items. It is close to the<br>
 75% on Milk and above it for Grocery. It is at the 50th percentile for Detergent/Paper, but its purchases here are an order of magnitude higher<br>
-than index 132's, even though they both fall in the 50th. This feature might be an good indicator of the type of the client. Delicatessen is also<br>
+than index 132's, even though they both fall in the 50th. This feature might be a good indicator of the type of the client. Delicatessen is also<br>
 solidly above the 75th percentile. This profile may indicate that it is some sort of general grocery retailer. A general store would sell lots of<br>
 groceries, milk, and cleaning products. Its lack of frozen food purchases is curious. Maybe it is using a different wholesaler for that particular<br>
 category.</p>
@@ -625,7 +625,7 @@ category.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
@@ -639,7 +639,7 @@ category.</p>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="n">test_size</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
 
     <span class="c"># TODO: Create a decision tree regressor and fit it to the training set</span>
-    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
     <span class="c"># TODO: Report the score of the prediction using the testing set</span>
@@ -658,13 +658,13 @@ category.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Fresh :  -0.300627357084
+<pre>Fresh :  -0.38626533715
 
-Grocery :  0.708671806454
+Grocery :  0.695471477255
 
-Frozen :  -0.314933739102
+Frozen :  -0.282770401906
 
-Detergents_Paper :  0.474694751032
+Detergents_Paper :  0.470169003888
 
 </pre>
 </div>
@@ -690,10 +690,16 @@ Detergents_Paper :  0.474694751032
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-I chose the features above because they were the ones relevant in Question 1 and I was curious if they were predictable by the other features. As<br>
-can be seen above, Grocery and Detergents seem to be predicted by the purchase amounts of all other features excluding themselves, whereas Frozen<br>
-and Fresh foods can't even be fit by the DecisionTree.</p>
+<p><strong>Answer:</strong></p>
+<p>I chose the features Grocery, Detergents/Paper, Frozen and Fresh, because they were the ones seeming relevant in Question 1 and I was curious if<br>
+they were predictable by the other features. As can be seen above by the <code>R^2</code> scores:</p>
+<p>Grocery:  0.695471477255
+Detergents_Paper:  0.470169003888</p>
+<p>Grocery and Detergents seem to be predicted by the purchase amounts of all other features excluding themselves.</p>
+<p>Whereas with negative scores;</p>
+<p>Frozen:  -0.282770401906
+Fresh:   -0.38626533715</p>
+<p>indicate that Frozen and Fresh foods can't even be fit by the DecisionTree.</p>
 
 </div>
 </div>
