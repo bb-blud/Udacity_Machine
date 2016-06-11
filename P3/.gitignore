@@ -1,4 +1,8 @@
 #ignore the projects zip file
 customer_segments.zip
+
+#ignore python binaries
 *.pyc
-.gitignore
+
+#ignore Reviews
+*Review*
