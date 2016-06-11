@@ -205,7 +205,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import libraries necessary for this project</span>
@@ -258,7 +258,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display a description of the dataset</span>
@@ -373,35 +373,6 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="mf">3127.75</span><span class="o">+</span>   <span class="mi">1533</span><span class="o">+</span>   <span class="mf">2153.</span><span class="o">+</span>    <span class="mf">742.25</span><span class="o">+</span>   <span class="mf">256.75</span><span class="o">+</span>    <span class="mf">408.250000</span>  
-<span class="k">print</span> <span class="mf">8504.0000</span><span class="o">+</span>  <span class="mf">3627.0000</span><span class="o">+</span>  <span class="mf">4755.5000</span><span class="o">+</span>  <span class="mf">1526.0000</span><span class="o">+</span>  <span class="mf">816.5000</span><span class="o">+</span>   <span class="mf">965.500000</span>  
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>8221.0
-20194.5
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -414,7 +385,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
@@ -498,11 +469,17 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">proportions</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">samples</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">+</span> <span class="p">[</span><span class="mf">100.</span><span class="o">*</span><span class="n">purchase</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">samples</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">purchase</span> <span class="ow">in</span> <span class="n">samples</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
-<span class="n">breakdown</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">proportions</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Totals&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;%&#39;</span><span class="o">+</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">samples</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span> <span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">two5</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">3127.750</span><span class="p">,</span>  <span class="mf">1533.000</span><span class="p">,</span>  <span class="mf">2153.000</span><span class="p">,</span>   <span class="mf">742.250</span><span class="p">,</span>  <span class="mf">256.750</span><span class="p">,</span>   <span class="mf">408.250</span><span class="p">]</span>
+<span class="n">five0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8504.000</span><span class="p">,</span>  <span class="mf">3627.000</span><span class="p">,</span>  <span class="mf">4755.500</span><span class="p">,</span>  <span class="mf">1526.000</span><span class="p">,</span>  <span class="mf">816.500</span><span class="p">,</span>   <span class="mf">965.500</span><span class="p">]</span>
+<span class="n">sev5</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">16933.750</span><span class="p">,</span>  <span class="mf">7190.250</span><span class="p">,</span> <span class="mf">10655.750</span><span class="p">,</span>  <span class="mf">3554.250</span><span class="p">,</span> <span class="mf">3922.000</span><span class="p">,</span>  <span class="mf">1820.25</span><span class="p">]</span> 
+<span class="k">print</span> <span class="s">&quot;Total 25th percentile mark: &quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">two5</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Total 50th percentile mark: &quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">five0</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;Total 50th percentile mark: &quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sev5</span><span class="p">)</span>
+<span class="n">proportions</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">samples</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">+</span> <span class="p">[</span><span class="mf">100.</span><span class="o">*</span><span class="n">purchase</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">samples</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">purchase</span> <span class="ow">in</span> <span class="n">samples</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="n">breakdown</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">proportions</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Totals&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;%&#39;</span><span class="o">+</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">samples</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span> <span class="p">)</span> 
 <span class="n">display</span><span class="p">(</span><span class="n">breakdown</span><span class="p">)</span>
 </pre></div>
 
@@ -569,6 +546,15 @@ div#notebook {
 
 </div>
 
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total 25th percentile mark:  8221.0
+Total 50th percentile mark:  20194.5
+Total 50th percentile mark:  44076.25
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -591,17 +577,25 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-Index 392 made the least total purchases out of the three sampled customers. Its total purchases, 9733 mu, were less than half than those of index<br>
-132, the next purchaser in size. As can be seen in the breakdown above, most of its purchases were for milk and grocery, accounting for 80% of its<br>
-total. Maybe index 392 specializes in making milk based food items like cheese cakes and custards, maybe it is a small to medium sized convenience<br>
-store. Index 132's purchases mostly entail fresh products, accounting for 70 percent of its purchases. This could point to some sort of health<br>
-food establishment, focused maybe on salads, juices, smoothies,and other such fresh produce intensive products. 40% of Index 245's purchases are<br>
-comprised of Grocery items, with detergents/paper at 25% and milk at 17.5%. All other categories are represented by at least 8% of total purchases<br>
-except for frozen items, which come at a negligible 0.7%. It also purchased 13806 mu more than index 132, making it the biggest buyer in the sample<br>
-of 3. Its purchases seem somewhat more evenly distributed compared  to the other two buyers, plus it is a significantly bigger buyer. It may<br>
-indicate that it is some sort of general grocery store or a large restaurant. A general store would sell lots of cleaning products, a restaurant<br>
-may need them to maintain sanitation standards. Its lack of frozen food purchases is curious. Maybe it is using a different wholesaler for that<br>
-particular category, maybe as a large chain restaurant it simply does not sell those items in its menu.</p>
+       Index 392 is way below the 25th percentile in Fresh puchases, just above it for Delicatessen, and just below it for Frozen. It is at<br>
+the 50th percentile for Milk and between the 50th and 25th percentile for Grocery. As can be seen by the breakdown above these account for 80% of<br>
+its total purchases. Since its total purchases were a mere 9733 mu (less than half than those of index 132) we see it is the smallest customer of<br>
+the sample of three and a small client overall. Maybe index 392 specializes in making milk based food items like cheese cakes or custards or<br>
+milkshakes.<br>
+       Index 132's purchases mostly entail fresh products, accounting for 70 percent of its purchases. It is still below the 25th percentile<br>
+relative to the rest of the population in this category. It is in between the 50th and 25th percentile for Milk and Grocery, at the 50th for<br>
+Detergents_Paper and well below the 25th for Delicatessen. Again from the breakdown above, its total purchases are almost equal to those of a<br>
+customer that would be at the 50th percentile mark. This indicates that index 132 is a medium sized purchaser. Since the bulk of its purchases<br>
+are for fresh products, with a good amount of Grocery, and being at the 50th percentile for Detergents/Paper, it could mean that index 132 is a<br>
+restaurant preparing fresh food (not frozen, way below the 25th) and requiring lots of cleaning. It could also be a small market convenience store.
+       40% of Index 245's purchases are comprised of Grocery items, with detergents/paper at 25% and milk at 17.5%. All other categories are<br>
+represented by at least 8% of total purchases except for frozen items, which come at a negligible 0.7%. Its purchases seem somewhat more evenly<br>
+distributed compared  to the other two buyers. It just below the 25th percentile for Fresh, and way below it on Frozen items. It is close to the<br>
+75% on Milk and above it for Grocery. It is at the 50th percentile for Detergent/Paper, but its purchases here are an order of magnitude higher<br>
+than index 132's, even though they both fall in the 50th. This feature might be an good indicator of the type of the client. Delicatessen is also<br>
+solidly above the 75th percentile. This profile may indicate that it is some sort of general grocery retailer. A general store would sell lots of<br>
+groceries, milk, and cleaning products. Its lack of frozen food purchases is curious. Maybe it is using a different wholesaler for that particular<br>
+category.</p>
 
 </div>
 </div>
@@ -6306,30 +6300,30 @@ AAAASUVORK5CYII=
   <tbody>
     <tr>
       <th>0</th>
-      <td>518</td>
-      <td>4180</td>
-      <td>3600</td>
-      <td>659</td>
-      <td>122</td>
-      <td>654</td>
+      <td>6.249975</td>
+      <td>8.338067</td>
+      <td>8.188689</td>
+      <td>6.490724</td>
+      <td>4.804021</td>
+      <td>6.483107</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>14903</td>
-      <td>2032</td>
-      <td>2479</td>
-      <td>576</td>
-      <td>955</td>
-      <td>328</td>
+      <td>9.609318</td>
+      <td>7.616776</td>
+      <td>7.815611</td>
+      <td>6.356108</td>
+      <td>6.861711</td>
+      <td>5.793014</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3062</td>
-      <td>6154</td>
-      <td>13916</td>
-      <td>230</td>
-      <td>8933</td>
-      <td>2784</td>
+      <td>8.026824</td>
+      <td>8.724858</td>
+      <td>9.540795</td>
+      <td>5.438079</td>
+      <td>9.097508</td>
+      <td>7.931644</td>
     </tr>
   </tbody>
 </table>
@@ -6364,30 +6358,30 @@ AAAASUVORK5CYII=
   <tbody>
     <tr>
       <th>0</th>
-      <td>6.249975</td>
-      <td>8.338067</td>
-      <td>8.188689</td>
-      <td>6.490724</td>
-      <td>4.804021</td>
-      <td>6.483107</td>
+      <td>518</td>
+      <td>4180</td>
+      <td>3600</td>
+      <td>659</td>
+      <td>122</td>
+      <td>654</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>9.609318</td>
-      <td>7.616776</td>
-      <td>7.815611</td>
-      <td>6.356108</td>
-      <td>6.861711</td>
-      <td>5.793014</td>
+      <td>14903</td>
+      <td>2032</td>
+      <td>2479</td>
+      <td>576</td>
+      <td>955</td>
+      <td>328</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>8.026824</td>
-      <td>8.724858</td>
-      <td>9.540795</td>
-      <td>5.438079</td>
-      <td>9.097508</td>
-      <td>7.931644</td>
+      <td>3062</td>
+      <td>6154</td>
+      <td>13916</td>
+      <td>230</td>
+      <td>8933</td>
+      <td>2784</td>
     </tr>
   </tbody>
 </table>
@@ -11404,11 +11398,11 @@ GMM is a better choice for this problem.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4 clusters: 0.331311007734
+<pre>6 clusters: 0.343816246978
+5 clusters: 0.355325312517
+4 clusters: 0.331311007734
 3 clusters: 0.334573024124
 2 clusters: 0.440308484753
-6 clusters: 0.343816246978
-5 clusters: 0.355325312517
 </pre>
 </div>
 </div>
