@@ -16751,7 +16751,7 @@ p4aRiIiIiIgEPTWMREREREQk6KlhJCIiIiIiQU8NIxERERERCXpqGImIiIiISNBTw0hERERERILe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">comps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> 
@@ -16884,7 +16884,7 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after having a PCA transformation applied </span>
@@ -16972,7 +16972,7 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
@@ -17006,7 +17006,7 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after applying PCA transformation in two dimensions</span>
@@ -17111,8 +17111,8 @@ is in fact suitably represented by Gaussian shape clusters, this might make the 
 </li>
 <li><p>Again <em>if</em> the underlying data is a patchwork of Gaussian distributions, GMM can find better<br>
 defined boundaries between clusters than K-Means. For swathes of points between clusters, K-Means<br>
-can be rather <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm#/media/File:ClusterAnalysis_Mouse.svg">arbitrary</a>
-in its delineation of a boundary, whereas GMM can infer more a reasonable partition.</p>
+can be rather <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm#/media/File:ClusterAnalysis_Mouse.svg">rigid</a>
+in its delineation of a boundary, since the boundaries themselves are lines. GMM on the other hand, can infer more a reasonable partition.</p>
 </li>
 </ul>
 <p>From what I have understood, the main reasons <em>not</em> to use GMM would be if the data in question was of a very large size, or if the data in<br>
@@ -17147,7 +17147,7 @@ GMM is a better choice for this problem.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GMM</span>
@@ -17185,11 +17185,11 @@ GMM is a better choice for this problem.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4 clusters: 0.332444904187
-3 clusters: 0.37513463899
+<pre>4 clusters: 0.331389093566
+3 clusters: 0.370684291825
 2 clusters: 0.411818864386
-6 clusters: 0.275939105883
-5 clusters: 0.276834945346
+6 clusters: 0.273013050193
+5 clusters: 0.280983407051
 </pre>
 </div>
 </div>
@@ -17231,7 +17231,7 @@ The highest score of 0.41 was obtained for k = 2 clusters. K-Means didn't fair m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display the results of the clustering from implementation</span>
@@ -18026,7 +18026,7 @@ rGCWwQYAACZDBwgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJiM/wfFYiyD
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Inverse transform the centers</span>
@@ -18108,15 +18108,26 @@ rGCWwQYAACZDBwgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJiM/wfFYiyD
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">sg0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8812.0</span><span class="p">,</span>  <span class="mf">2052.0</span><span class="p">,</span>   <span class="mf">2689.0</span><span class="p">,</span>  <span class="mf">2058.0</span><span class="p">,</span> <span class="mf">337.0</span><span class="p">,</span> <span class="mf">712.0</span><span class="p">]</span>
-<span class="n">sg1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4316.0</span><span class="p">,</span>  <span class="mf">6347.0</span><span class="p">,</span>   <span class="mf">9555.0</span><span class="p">,</span>  <span class="mf">1036.0</span><span class="p">,</span> <span class="mf">3046.0</span><span class="p">,</span> <span class="mf">945.0</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">sg0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4316.0</span><span class="p">,</span>  <span class="mf">6347.0</span><span class="p">,</span>   <span class="mf">9555.0</span><span class="p">,</span>  <span class="mf">1036.0</span><span class="p">,</span> <span class="mf">3046.0</span><span class="p">,</span> <span class="mf">945.0</span><span class="p">]</span>
+<span class="n">sg1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8812.0</span><span class="p">,</span>  <span class="mf">2052.0</span><span class="p">,</span>   <span class="mf">2689.0</span><span class="p">,</span>  <span class="mf">2058.0</span><span class="p">,</span> <span class="mf">337.0</span><span class="p">,</span> <span class="mf">712.0</span><span class="p">]</span>
 <span class="k">print</span>  <span class="s">&quot;Total Segment 0: &quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sg0</span><span class="p">)</span>
 <span class="k">print</span>  <span class="s">&quot;Total Segment 1: &quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sg1</span><span class="p">)</span>
-<span class="k">print</span>  <span class="nb">sum</span><span class="p">(</span><span class="n">sg1</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">sg0</span><span class="p">)</span>
+<span class="k">print</span>
+
+<span class="k">print</span> <span class="s">&quot;Purchase ratios Segment 0: &quot;</span>
 <span class="k">print</span> <span class="p">[</span><span class="mf">100.</span><span class="o">*</span><span class="n">purchase</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">sg0</span><span class="p">)</span> <span class="k">for</span> <span class="n">purchase</span> <span class="ow">in</span> <span class="n">sg0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&quot;M + G + D =  &quot;</span><span class="p">,</span>  <span class="mf">25.14161220043573</span> <span class="o">+</span> <span class="mf">37.849079025549614</span> <span class="o">+</span> <span class="mf">12.06575559516736</span>
+<span class="k">print</span>
+
+<span class="k">print</span> <span class="s">&quot;Purchase ratios Segment 1: &quot;</span>
+<span class="k">print</span> <span class="p">[</span><span class="mf">100.</span><span class="o">*</span><span class="n">purchase</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">sg1</span><span class="p">)</span> <span class="k">for</span> <span class="n">purchase</span> <span class="ow">in</span> <span class="n">sg1</span><span class="p">]</span>
+<span class="k">print</span>
+
+<span class="k">print</span> <span class="s">&quot;Segment 1 to Segment 0:&quot;</span>
+<span class="k">print</span>  <span class="nb">sum</span><span class="p">(</span><span class="n">sg0</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">sg1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -18129,10 +18140,18 @@ rGCWwQYAACZDBwgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJgMAQgAAJiM/wfFYiyD
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Total Segment 0:  16660.0
-Total Segment 1:  25245.0
-1.51530612245
+<pre>Total Segment 0:  25245.0
+Total Segment 1:  16660.0
+
+Purchase ratios Segment 0: 
+[17.09645474351357, 25.14161220043573, 37.849079025549614, 4.103782927312339, 12.06575559516736, 3.7433155080213902]
+M + G + D =   75.0564468212
+
+Purchase ratios Segment 1: 
 [52.89315726290516, 12.316926770708283, 16.140456182472988, 12.352941176470589, 2.0228091236494596, 4.2737094837935174]
+
+Segment 1 to Segment 0:
+1.51530612245
 </pre>
 </div>
 </div>
@@ -18146,14 +18165,15 @@ Total Segment 1:  25245.0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> 
-The average customer assigned to Cluster 0 is at the 75 percentile  for Milk (just below actually), Grocery, Frozen, and and well above the 50th<br>
-for Detergents, I don't know if its appropriate to say maybe at the 70th for Detergents. This would tell me that there are less customers associated<br>
-with Cluster 0, and indeed the Cluster above looks less dense. The center customer for Cluster 0 also spends 1.6 times more in total than<br>
-than that of Cluster 1.<br>
-The average customer assigned to Cluster 1 on the other hand is only barely above the 25th percentile for Detergents. It is at the 50th<br>
-percentile for Fresh products and at the 25th for the rest of the categories. Fresh purchases constitute more than 50% of its total with<br>
-Grocery, Milk, and Frozen hovering only between 10 and 15%. Overall this seems to point to a natural state of affairs, many smaller<br>
+<p><strong>Answer:</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       The average customer assigned to Cluster 0 is at the high end of the 50th percentile, I don't know if its appropriate to say maybe between<br>
+the 70th and 74th percentile for Milk, Grocery, and Detergents. Since together those categories make up 75% of its total puchases, this would tell<br>
+me that there are less customers associated with Cluster 0, and indeed Cluster 0 above looks less dense. The center customer for Cluster 0<br>
+also spends 1.5 times more in total than  than that of Cluster 1.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       The average customer assigned to Cluster 1 on the other hand is only barely above the 25th percentile for Detergents. It is at the 50th<br>
+percentile for Fresh products and Frozen, and at the 25th for the rest of the categories. Fresh purchases constitute more than 50% of its total with Grocery, Milk, and Frozen hovering between 12% and 16% each. Overall this seems to point to a natural state of affairs, many smaller<br>
 purchasers, and a separate and fewer number of larger purchasers.</p>
 
 </div>
@@ -18161,10 +18181,10 @@ purchasers, and a separate and fewer number of larger purchasers.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Display a description of the dataset</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># Description of the dataset for easier comparison</span>
 <span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 </pre></div>
 
@@ -18289,7 +18309,7 @@ purchasers, and a separate and fewer number of larger purchasers.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">display</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
@@ -18360,7 +18380,7 @@ purchasers, and a separate and fewer number of larger purchasers.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display the predictions</span>
@@ -18394,13 +18414,16 @@ Sample point 2 predicted to be in Cluster 0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-"Sample point 2" or as originally refered to, index 245, is a large client with total purchases of 35079 mu. This, plus the heavier proportion of<br>
-Milk and Grocery purchases, clearly places it in Cluster 0. Again curiously, index 245 has very low frozen purchases, in that respect it is unlike<br>
-the Cluster 0 center. Index 132 or "Sample point 1", is particularly representative of Cluster 1 in the sense that it so disproportionately<br>
-favors Fresh purchases, something we saw in the "center" customer of that cluster. Index 392, "Sample point 0", is simply so small that it is<br>
-clearly a member of Cluster 1. Curiously, it <em>was</em> flagged as an outlier for "<em>at least one attribute</em>", though it didn't get culled under the<br>
-stricter outlier requirement of max_outlies = 2.</p>
+<p><strong>Answer:</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       "Sample point 2" or as originally referred to, index 245, is a large client with total purchases of 35079 mu. This, plus the heavier<br>
+proportion of Milk and Grocery purchases, clearly places it in Cluster 0. Index 245 has very low frozen purchases; however, the center for<br>
+Cluster 0 is not that high above the 25th percentile for this category. In addition, Frozen only accounts for around 12% of its total purchases.<br>
+So the average customer Cluster does tend to be a weak purchaser in this category, index 245 might simply be an extreme case of that trend.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Index 132 or "Sample point 1", is particularly representative of Cluster 1 in the sense that it so disproportionately favors Fresh<br>
+purchases, something we saw in the "center" customer of that cluster. Index 392, "Sample point 0", is simply so small that it must be a member<br>
+of Cluster 1, even though its buying profile of high Milk and Grocery is more like that of Cluster 0's members.</p>
 
 </div>
 </div>
@@ -18427,7 +18450,7 @@ stricter outlier requirement of max_outlies = 2.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">rows</span> <span class="o">=</span> <span class="n">good_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -18511,7 +18534,7 @@ differently to the new feature. A good feature to have would be frequency purcha
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display the clustering results based on &#39;Channel&#39; data</span>
@@ -19295,7 +19318,7 @@ AAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
 It pretty much exactly corresponds to the two class cluster deduced throughout the project. You could say that, for Dimension1, values less than<br>
--2 correspond almost exclusively with Hotel/Restaurant/Cafe customers. Values greater than 2 correspond almost exclusively to retail customers.<br>
+0 correspond almost exclusively with Hotel/Restaurant/Cafe customers. Values greater than 1 correspond almost exclusively to retail customers.<br>
 These classifications are nicely consistent with the previously observed big vs small business split, if not my speculated categories for said<br>
 businesses.</p>
 
