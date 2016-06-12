@@ -16869,7 +16869,7 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after having a PCA transformation applied </span>
@@ -16903,30 +16903,30 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
   <tbody>
     <tr>
       <th>0</th>
-      <td>-0.7389</td>
-      <td>-2.4439</td>
-      <td>-1.8543</td>
-      <td>0.3034</td>
-      <td>-1.1978</td>
-      <td>0.0740</td>
+      <td>-0.9955</td>
+      <td>-2.3169</td>
+      <td>1.7454</td>
+      <td>-0.4569</td>
+      <td>-1.2462</td>
+      <td>0.0669</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.5108</td>
-      <td>-0.6628</td>
-      <td>1.1540</td>
-      <td>-0.9021</td>
-      <td>0.4783</td>
-      <td>-0.2952</td>
+      <td>-0.5443</td>
+      <td>-0.4806</td>
+      <td>-1.4637</td>
+      <td>-0.4733</td>
+      <td>0.4137</td>
+      <td>0.2771</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3.1357</td>
-      <td>-0.3003</td>
-      <td>-0.6840</td>
-      <td>-1.2441</td>
-      <td>0.6467</td>
-      <td>0.1199</td>
+      <td>3.0855</td>
+      <td>-0.5666</td>
+      <td>0.2008</td>
+      <td>-1.4521</td>
+      <td>0.6644</td>
+      <td>-0.1093</td>
     </tr>
   </tbody>
 </table>
@@ -16957,7 +16957,7 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
@@ -16991,7 +16991,7 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Display sample log-data after applying PCA transformation in two dimensions</span>
@@ -17021,18 +17021,18 @@ coeficient, with Fresh being actually its largest positive coeficient at 0.69. I
   <tbody>
     <tr>
       <th>0</th>
-      <td>-0.7389</td>
-      <td>-2.4439</td>
+      <td>-0.9955</td>
+      <td>-2.3169</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.5108</td>
-      <td>-0.6628</td>
+      <td>-0.5443</td>
+      <td>-0.4806</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3.1357</td>
-      <td>-0.3003</td>
+      <td>3.0855</td>
+      <td>-0.5666</td>
     </tr>
   </tbody>
 </table>
@@ -17132,15 +17132,15 @@ GMM is a better choice for this problem.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GMM</span>
 <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+
     <span class="c"># TODO: Apply your clustering algorithm of choice to the reduced data </span>
     <span class="n">clusterer</span> <span class="o">=</span> <span class="n">GMM</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
     <span class="c">#clusterer = KMeans(n_clusters = k).fit(reduced_data)</span>
@@ -17170,11 +17170,11 @@ GMM is a better choice for this problem.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>6 clusters: 0.343816246978
-5 clusters: 0.355325312517
-4 clusters: 0.331311007734
-3 clusters: 0.334573024124
-2 clusters: 0.440308484753
+<pre>4 clusters: 0.332444904187
+3 clusters: 0.372313708076
+2 clusters: 0.411818864386
+6 clusters: 0.273860710098
+5 clusters: 0.287010521606
 </pre>
 </div>
 </div>
@@ -17199,7 +17199,7 @@ GMM is a better choice for this problem.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-The highest score of 0.44 was obtained for k = 2 clusters. K-Means didn't fair much better, was slightly higher at 0.443 for k = 2 (not shown).</p>
+The highest score of 0.41 was obtained for k = 2 clusters. K-Means didn't fair much better, was slightly higher at 0.43 for k = 2 (not shown).</p>
 
 </div>
 </div>
