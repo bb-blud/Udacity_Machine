@@ -12065,12 +12065,14 @@ Test set: 95 samples
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Training-and-Evaluating-Models">4. Training and Evaluating Models<a class="anchor-link" href="#4.-Training-and-Evaluating-Models">&#182;</a></h2><p>Next we perform a baseline comparison of 5 different classification models out of the box.
-  -DecisionTreeClassifier
-  -SVC
-  -KNeighborsClassifier
-  -GaussianNB
-  -AdaBoostClassifier</p>
+<h2 id="4.-Training-and-Evaluating-Models">4. Training and Evaluating Models<a class="anchor-link" href="#4.-Training-and-Evaluating-Models">&#182;</a></h2><p>Next we perform a baseline comparison of 5 different classification models out of the box.</p>
+<ul>
+<li>DecisionTreeClassifier</li>
+<li>SVC</li>
+<li>KNeighborsClassifier</li>
+<li>GaussianNB</li>
+<li>AdaBoostClassifier</li>
+</ul>
 <p>We fit the model to the training data, try to predict labels (for both training and test sets), and measure the F<sub>1</sub> score. Then repeat this process with different training set sizes (100, 200, 300), keeping test set constant.</p>
 
 </div>
@@ -12457,13 +12459,6 @@ Also from sklearn;</p>
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>DecisionTreeClassifier
-</pre>
-</div>
-</div>
-
-<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -12480,45 +12475,45 @@ Also from sklearn;</p>
   <tbody>
     <tr>
       <th>Training samples: 50</th>
-      <td>0.00134015</td>
-      <td>1</td>
-      <td>0.00022912</td>
-      <td>0.655738</td>
+      <td>0.000905991</td>
+      <td>0.84507</td>
+      <td>0.000964165</td>
+      <td>0.706767</td>
     </tr>
     <tr>
       <th>Training samples: 100</th>
-      <td>0.00187397</td>
-      <td>1</td>
-      <td>0.000470161</td>
-      <td>0.738462</td>
+      <td>0.000568867</td>
+      <td>0.860759</td>
+      <td>0.00172305</td>
+      <td>0.723077</td>
     </tr>
     <tr>
       <th>Training samples: 150</th>
-      <td>0.00248003</td>
-      <td>1</td>
-      <td>0.000349045</td>
-      <td>0.7</td>
+      <td>0.000732183</td>
+      <td>0.908257</td>
+      <td>0.00194407</td>
+      <td>0.68254</td>
     </tr>
     <tr>
       <th>Training samples: 200</th>
-      <td>0.00266218</td>
-      <td>1</td>
-      <td>0.000222921</td>
-      <td>0.692913</td>
+      <td>0.000803947</td>
+      <td>0.865772</td>
+      <td>0.00178885</td>
+      <td>0.729927</td>
     </tr>
     <tr>
       <th>Training samples: 250</th>
-      <td>0.00324202</td>
-      <td>1</td>
-      <td>0.000225067</td>
-      <td>0.694215</td>
+      <td>0.000707865</td>
+      <td>0.878453</td>
+      <td>0.00239015</td>
+      <td>0.677165</td>
     </tr>
     <tr>
       <th>Training samples: 300</th>
-      <td>0.00353885</td>
-      <td>1</td>
-      <td>0.000210047</td>
-      <td>0.744186</td>
+      <td>0.000725985</td>
+      <td>0.880361</td>
+      <td>0.00236201</td>
+      <td>0.731343</td>
     </tr>
   </tbody>
 </table>
@@ -12529,7 +12524,7 @@ Also from sklearn;</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>SVC
+<pre>KNeighborsClassifier
 </pre>
 </div>
 </div>
@@ -12600,7 +12595,7 @@ Also from sklearn;</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>KNeighborsClassifier
+<pre>SVC
 </pre>
 </div>
 </div>
@@ -12622,51 +12617,58 @@ Also from sklearn;</p>
   <tbody>
     <tr>
       <th>Training samples: 50</th>
-      <td>0.000905991</td>
-      <td>0.84507</td>
-      <td>0.000964165</td>
-      <td>0.706767</td>
+      <td>0.00134015</td>
+      <td>1</td>
+      <td>0.00022912</td>
+      <td>0.655738</td>
     </tr>
     <tr>
       <th>Training samples: 100</th>
-      <td>0.000568867</td>
-      <td>0.860759</td>
-      <td>0.00172305</td>
-      <td>0.723077</td>
+      <td>0.00187397</td>
+      <td>1</td>
+      <td>0.000470161</td>
+      <td>0.738462</td>
     </tr>
     <tr>
       <th>Training samples: 150</th>
-      <td>0.000732183</td>
-      <td>0.908257</td>
-      <td>0.00194407</td>
-      <td>0.68254</td>
+      <td>0.00248003</td>
+      <td>1</td>
+      <td>0.000349045</td>
+      <td>0.7</td>
     </tr>
     <tr>
       <th>Training samples: 200</th>
-      <td>0.000803947</td>
-      <td>0.865772</td>
-      <td>0.00178885</td>
-      <td>0.729927</td>
+      <td>0.00266218</td>
+      <td>1</td>
+      <td>0.000222921</td>
+      <td>0.692913</td>
     </tr>
     <tr>
       <th>Training samples: 250</th>
-      <td>0.000707865</td>
-      <td>0.878453</td>
-      <td>0.00239015</td>
-      <td>0.677165</td>
+      <td>0.00324202</td>
+      <td>1</td>
+      <td>0.000225067</td>
+      <td>0.694215</td>
     </tr>
     <tr>
       <th>Training samples: 300</th>
-      <td>0.000725985</td>
-      <td>0.880361</td>
-      <td>0.00236201</td>
-      <td>0.731343</td>
+      <td>0.00353885</td>
+      <td>1</td>
+      <td>0.000210047</td>
+      <td>0.744186</td>
     </tr>
   </tbody>
 </table>
 </div>
 </div>
 
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>DecisionTreeClassifier
+</pre>
+</div>
 </div>
 
 </div>
