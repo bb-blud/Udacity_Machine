@@ -5,5 +5,3 @@ Unsup_materials
 maildir
 Unsupervised_learning/maildir
 
-#Ignore ipy checkpoints
-.ipynb_checkpoints
