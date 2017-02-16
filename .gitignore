@@ -1,2 +1,8 @@
 #ignore ipython notebook checkpoints for all
 .ipynb_checkpoints
+
+#ignore optional titanic project
+Optional_Titanic
+
+#ignore original version of P1
+P1
