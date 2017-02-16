@@ -9,3 +9,6 @@ customer_segments.zip
 
 #ignore checkpoints
 .ipynb_checkpoints
+
+#ignore html file
+customer_segments.html
