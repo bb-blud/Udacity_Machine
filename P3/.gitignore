@@ -6,3 +6,6 @@ customer_segments.zip
 
 #ignore Reviews
 *Review*
+
+#ignore checkpoints
+.ipynb_checkpoints
