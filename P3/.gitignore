@@ -1,6 +1,9 @@
 #ignore the projects zip file
 customer_segments.zip
 
+#ignore csv data
+Wholesale_customers_data.csv
+
 #ignore python binaries
 *.pyc
 
